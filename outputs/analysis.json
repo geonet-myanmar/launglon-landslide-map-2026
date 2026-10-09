@@ -1,0 +1,3649 @@
+{
+ "n_landslides": 1068,
+ "area_ha": 2410.01,
+ "confidence": {
+  "high": 536,
+  "medium": 374,
+  "low": 158
+ },
+ "optical_class": {
+  "cloud": 673,
+  "supported": 237,
+  "not seen": 158
+ },
+ "size_hist": [
+  0,
+  0,
+  517,
+  220,
+  154,
+  93,
+  40,
+  44
+ ],
+ "size_bins": [
+  "0.05-0.1",
+  "0.1-0.2",
+  "0.2-0.5",
+  "0.5-1",
+  "1-2",
+  "2-5",
+  "5-10",
+  ">10"
+ ],
+ "valid_land_km2": 770.3,
+ "village_tracts": [
+  {
+   "VT": "Tha Byar",
+   "VT_MMR": "သဗျာ",
+   "VT_PCODE": "MMR006002004",
+   "land_km2": 36.31,
+   "landslides": 123,
+   "high_conf": 67,
+   "landslide_ha": 489.58,
+   "density_pct": 13.484,
+   "per_km2": 3.39
+  },
+  {
+   "VT": "Kyauk Sin",
+   "VT_MMR": "ကျောက်ဆင်",
+   "VT_PCODE": "MMR006002022",
+   "land_km2": 39.39,
+   "landslides": 89,
+   "high_conf": 38,
+   "landslide_ha": 228.92,
+   "density_pct": 5.812,
+   "per_km2": 2.26
+  },
+  {
+   "VT": "Tha Pyay Shaung",
+   "VT_MMR": "သပြေရှောင်",
+   "VT_PCODE": "MMR006002034",
+   "land_km2": 25.6,
+   "landslides": 69,
+   "high_conf": 45,
+   "landslide_ha": 219.79,
+   "density_pct": 8.585,
+   "per_km2": 2.7
+  },
+  {
+   "VT": "Ti Zit",
+   "VT_MMR": "တီဇစ်",
+   "VT_PCODE": "MMR006002012",
+   "land_km2": 29.45,
+   "landslides": 66,
+   "high_conf": 54,
+   "landslide_ha": 214.85,
+   "density_pct": 7.296,
+   "per_km2": 2.24
+  },
+  {
+   "VT": "Auk Yae Hpyu",
+   "VT_MMR": "အောက်ရေဖြူ",
+   "VT_PCODE": "MMR006002015",
+   "land_km2": 32.27,
+   "landslides": 76,
+   "high_conf": 51,
+   "landslide_ha": 204.68,
+   "density_pct": 6.344,
+   "per_km2": 2.36
+  },
+  {
+   "VT": "Ka Det Gyi (Khun Hnit Thein)",
+   "VT_MMR": "ကဒက်ကြီး (၇-သိန်)",
+   "VT_PCODE": "MMR006002017",
+   "land_km2": 16.97,
+   "landslides": 68,
+   "high_conf": 44,
+   "landslide_ha": 188.89,
+   "density_pct": 11.129,
+   "per_km2": 4.01
+  },
+  {
+   "VT": "Tha Kyet Taw",
+   "VT_MMR": "သကျက်တော",
+   "VT_PCODE": "MMR006002032",
+   "land_km2": 51.53,
+   "landslides": 113,
+   "high_conf": 40,
+   "landslide_ha": 188.18,
+   "density_pct": 3.652,
+   "per_km2": 2.19
+  },
+  {
+   "VT": "Taw Kye",
+   "VT_MMR": "တောကျဲ",
+   "VT_PCODE": "MMR006002033",
+   "land_km2": 23.71,
+   "landslides": 72,
+   "high_conf": 50,
+   "landslide_ha": 177.11,
+   "density_pct": 7.47,
+   "per_km2": 3.04
+  },
+  {
+   "VT": "Kyauk Twin",
+   "VT_MMR": "ကျောက်တွင်း",
+   "VT_PCODE": "MMR006002037",
+   "land_km2": 58.72,
+   "landslides": 59,
+   "high_conf": 18,
+   "landslide_ha": 104.63,
+   "density_pct": 1.782,
+   "per_km2": 1.0
+  },
+  {
+   "VT": "Lay Thun Khan",
+   "VT_MMR": "လေးသွန်းခံ",
+   "VT_PCODE": "MMR006002009",
+   "land_km2": 8.76,
+   "landslides": 28,
+   "high_conf": 16,
+   "landslide_ha": 84.32,
+   "density_pct": 9.622,
+   "per_km2": 3.2
+  },
+  {
+   "VT": "Za Lut",
+   "VT_MMR": "ဇလွတ်",
+   "VT_PCODE": "MMR006002036",
+   "land_km2": 15.3,
+   "landslides": 24,
+   "high_conf": 15,
+   "landslide_ha": 48.09,
+   "density_pct": 3.142,
+   "per_km2": 1.57
+  },
+  {
+   "VT": "Kyauk Ni Maw",
+   "VT_MMR": "ကျောက်နီမော်",
+   "VT_PCODE": "MMR006002040",
+   "land_km2": 11.37,
+   "landslides": 27,
+   "high_conf": 19,
+   "landslide_ha": 44.28,
+   "density_pct": 3.896,
+   "per_km2": 2.38
+  },
+  {
+   "VT": "Pan Det Inn",
+   "VT_MMR": "ပန်းဒက်အင်း",
+   "VT_PCODE": "MMR006002023",
+   "land_km2": 29.29,
+   "landslides": 46,
+   "high_conf": 5,
+   "landslide_ha": 38.8,
+   "density_pct": 1.325,
+   "per_km2": 1.57
+  },
+  {
+   "VT": "Nyin Maw",
+   "VT_MMR": "ညင်းမော်",
+   "VT_PCODE": "MMR006002011",
+   "land_km2": 15.56,
+   "landslides": 35,
+   "high_conf": 22,
+   "landslide_ha": 32.09,
+   "density_pct": 2.062,
+   "per_km2": 2.25
+  },
+  {
+   "VT": "Auk Kyauk Wut",
+   "VT_MMR": "အောက်ကျောက်ဝပ်",
+   "VT_PCODE": "MMR006002041",
+   "land_km2": 8.97,
+   "landslides": 33,
+   "high_conf": 14,
+   "landslide_ha": 30.73,
+   "density_pct": 3.424,
+   "per_km2": 3.68
+  },
+  {
+   "VT": "Pa Nyit",
+   "VT_MMR": "ပညစ်",
+   "VT_PCODE": "MMR006002014",
+   "land_km2": 20.37,
+   "landslides": 41,
+   "high_conf": 12,
+   "landslide_ha": 26.49,
+   "density_pct": 1.3,
+   "per_km2": 2.01
+  },
+  {
+   "VT": "Sa Khan Gyi",
+   "VT_MMR": "စခန်းကြီး",
+   "VT_PCODE": "MMR006002029",
+   "land_km2": 23.07,
+   "landslides": 20,
+   "high_conf": 6,
+   "landslide_ha": 25.72,
+   "density_pct": 1.115,
+   "per_km2": 0.87
+  },
+  {
+   "VT": "Pan Da Le",
+   "VT_MMR": "ပန်းဒလဲ",
+   "VT_PCODE": "MMR006002006",
+   "land_km2": 10.13,
+   "landslides": 10,
+   "high_conf": 8,
+   "landslide_ha": 17.59,
+   "density_pct": 1.737,
+   "per_km2": 0.99
+  },
+  {
+   "VT": "Kyauk Wut Pyin",
+   "VT_MMR": "ကျောက်ဝပ်ပြင်",
+   "VT_PCODE": "MMR006002039",
+   "land_km2": 11.82,
+   "landslides": 16,
+   "high_conf": 3,
+   "landslide_ha": 13.74,
+   "density_pct": 1.162,
+   "per_km2": 1.35
+  },
+  {
+   "VT": "Kyauk Mat Tat",
+   "VT_MMR": "ကျောက်မတ်တတ်",
+   "VT_PCODE": "MMR006002038",
+   "land_km2": 18.75,
+   "landslides": 13,
+   "high_conf": 2,
+   "landslide_ha": 12.35,
+   "density_pct": 0.659,
+   "per_km2": 0.69
+  },
+  {
+   "VT": "Pyin Htein",
+   "VT_MMR": "ပြင်းထိန်",
+   "VT_PCODE": "MMR006002001",
+   "land_km2": 8.89,
+   "landslides": 11,
+   "high_conf": 2,
+   "landslide_ha": 5.05,
+   "density_pct": 0.568,
+   "per_km2": 1.24
+  },
+  {
+   "VT": "Maung Ma Kan",
+   "VT_MMR": "မောင်းမကန်",
+   "VT_PCODE": "MMR006002020",
+   "land_km2": 13.44,
+   "landslides": 6,
+   "high_conf": 0,
+   "landslide_ha": 3.62,
+   "density_pct": 0.269,
+   "per_km2": 0.45
+  },
+  {
+   "VT": "Na Khan Taw",
+   "VT_MMR": "နခံတော",
+   "VT_PCODE": "MMR006002030",
+   "land_km2": 5.99,
+   "landslides": 3,
+   "high_conf": 0,
+   "landslide_ha": 2.3,
+   "density_pct": 0.384,
+   "per_km2": 0.5
+  },
+  {
+   "VT": "Sit Pyea",
+   "VT_MMR": "စစ်ပြဲ",
+   "VT_PCODE": "MMR006002010",
+   "land_km2": 19.58,
+   "landslides": 4,
+   "high_conf": 3,
+   "landslide_ha": 2.3,
+   "density_pct": 0.117,
+   "per_km2": 0.2
+  },
+  {
+   "VT": "San Hlan",
+   "VT_MMR": "စမ်းလှမ်း",
+   "VT_PCODE": "MMR006002013",
+   "land_km2": 17.56,
+   "landslides": 5,
+   "high_conf": 0,
+   "landslide_ha": 1.94,
+   "density_pct": 0.11,
+   "per_km2": 0.28
+  },
+  {
+   "VT": "Ka Myaw Kin",
+   "VT_MMR": "ကမြောကင်း",
+   "VT_PCODE": "MMR006002031",
+   "land_km2": 9.58,
+   "landslides": 5,
+   "high_conf": 1,
+   "landslide_ha": 1.82,
+   "density_pct": 0.19,
+   "per_km2": 0.52
+  },
+  {
+   "VT": "Kha Maung Taung",
+   "VT_MMR": "ခမောင်းတောင်",
+   "VT_PCODE": "MMR006002028",
+   "land_km2": 6.57,
+   "landslides": 2,
+   "high_conf": 0,
+   "landslide_ha": 0.82,
+   "density_pct": 0.125,
+   "per_km2": 0.3
+  },
+  {
+   "VT": "Urban",
+   "VT_MMR": "",
+   "VT_PCODE": "MMR006002701",
+   "land_km2": 3.54,
+   "landslides": 1,
+   "high_conf": 1,
+   "landslide_ha": 0.52,
+   "density_pct": 0.147,
+   "per_km2": 0.28
+  },
+  {
+   "VT": "Taung Min Pyaung",
+   "VT_MMR": "တောင်မင်းပြောင်",
+   "VT_PCODE": "MMR006002027",
+   "land_km2": 6.82,
+   "landslides": 1,
+   "high_conf": 0,
+   "landslide_ha": 0.31,
+   "density_pct": 0.045,
+   "per_km2": 0.15
+  },
+  {
+   "VT": "Thar Yar Kone",
+   "VT_MMR": "သာယာကုန်း",
+   "VT_PCODE": "MMR006002024",
+   "land_km2": 9.75,
+   "landslides": 1,
+   "high_conf": 0,
+   "landslide_ha": 0.28,
+   "density_pct": 0.029,
+   "per_km2": 0.1
+  },
+  {
+   "VT": "Min Yat",
+   "VT_MMR": "မင်းရပ်",
+   "VT_PCODE": "MMR006002008",
+   "land_km2": 11.13,
+   "landslides": 1,
+   "high_conf": 0,
+   "landslide_ha": 0.21,
+   "density_pct": 0.019,
+   "per_km2": 0.09
+  },
+  {
+   "VT": "Ka Det Nge Seik",
+   "VT_MMR": "ကဒက်ငယ်ဆိပ်",
+   "VT_PCODE": "MMR006002021",
+   "land_km2": 14.35,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Inn Zauk",
+   "VT_MMR": "အင်းဇောက်",
+   "VT_PCODE": "MMR006002005",
+   "land_km2": 14.33,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Ka Htaung Ni",
+   "VT_MMR": "ကထောင်းနီ",
+   "VT_PCODE": "MMR006002016",
+   "land_km2": 16.74,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Ka Myaw Gyi",
+   "VT_MMR": "ကမြောကြီး",
+   "VT_PCODE": "MMR006002025",
+   "land_km2": 12.55,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Ka Nyon Kyun",
+   "VT_MMR": "ကညုံကျွန်း",
+   "VT_PCODE": "MMR006002003",
+   "land_km2": 6.96,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Kyet Yet Twin",
+   "VT_MMR": "ကြက်ယက်တွင်း",
+   "VT_PCODE": "MMR006002019",
+   "land_km2": 12.34,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Myo Haung",
+   "VT_MMR": "မြို့ဟောင်း",
+   "VT_PCODE": "MMR006002026",
+   "land_km2": 11.66,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Pyin Gyi Kyun",
+   "VT_MMR": "ပြင်ကြီးကျွန်း",
+   "VT_PCODE": "MMR006002035",
+   "land_km2": 33.71,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Pyin Kyaung",
+   "VT_MMR": "ပြင်ကျောင်း",
+   "VT_PCODE": "MMR006002018",
+   "land_km2": 15.79,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Way Di",
+   "VT_MMR": "ဝေဒီ",
+   "VT_PCODE": "MMR006002002",
+   "land_km2": 19.74,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  },
+  {
+   "VT": "Ywar Haung Wa",
+   "VT_MMR": "ရွာဟောင်းဝ",
+   "VT_PCODE": "MMR006002007",
+   "land_km2": 11.39,
+   "landslides": 0,
+   "high_conf": 0,
+   "landslide_ha": 0.0,
+   "density_pct": 0.0,
+   "per_km2": 0.0
+  }
+ ],
+ "villages": [
+  {
+   "village": "Taw Kye",
+   "village_mmr": "တောကျဲ",
+   "pcode": 177208,
+   "vt": "Taw Kye",
+   "dist_m": 47,
+   "ls_ha_1km": 58.18,
+   "buildings_1km": 260,
+   "lon": 98.1596,
+   "lat": 13.79993
+  },
+  {
+   "village": "Ka Det Nge Htein",
+   "village_mmr": "ကဒက်ငယ်ထိန်",
+   "pcode": 177156,
+   "vt": "Auk Yae Hpyu",
+   "dist_m": 4,
+   "ls_ha_1km": 33.22,
+   "buildings_1km": 416,
+   "lon": 98.13469,
+   "lat": 13.88634
+  },
+  {
+   "village": "Tha Win",
+   "village_mmr": "သဝင်",
+   "pcode": 177209,
+   "vt": "Taw Kye",
+   "dist_m": 248,
+   "ls_ha_1km": 31.57,
+   "buildings_1km": 223,
+   "lon": 98.15587,
+   "lat": 13.77758
+  },
+  {
+   "village": "Ya Be Inn",
+   "village_mmr": "ရဘဲအင်း",
+   "pcode": 177213,
+   "vt": "Tha Pyay Shaung",
+   "dist_m": 214,
+   "ls_ha_1km": 24.25,
+   "buildings_1km": 386,
+   "lon": 98.161,
+   "lat": 13.81904
+  },
+  {
+   "village": "Kayin Gyi",
+   "village_mmr": "ကရင်ကြီး",
+   "pcode": 177174,
+   "vt": "Kyauk Sin",
+   "dist_m": 211,
+   "ls_ha_1km": 23.89,
+   "buildings_1km": 260,
+   "lon": 98.09908,
+   "lat": 14.07111
+  },
+  {
+   "village": "Tha Byar",
+   "village_mmr": "သဗျာ",
+   "pcode": 177126,
+   "vt": "Tha Byar",
+   "dist_m": 264,
+   "ls_ha_1km": 20.67,
+   "buildings_1km": 311,
+   "lon": 98.12913,
+   "lat": 14.00968
+  },
+  {
+   "village": "Wet Thar Kin",
+   "village_mmr": "ဝက်သားကင်",
+   "pcode": 177162,
+   "vt": "Ka Det Gyi (Khun Hnit Thein)",
+   "dist_m": 240,
+   "ls_ha_1km": 18.3,
+   "buildings_1km": 370,
+   "lon": 98.13977,
+   "lat": 13.88196
+  },
+  {
+   "village": "Sin Htauk",
+   "village_mmr": "ဆင်ထောက်",
+   "pcode": 177221,
+   "vt": "Kyauk Twin",
+   "dist_m": 151,
+   "ls_ha_1km": 16.57,
+   "buildings_1km": 63,
+   "lon": 98.10919,
+   "lat": 13.70507
+  },
+  {
+   "village": "Mya Khar Pat",
+   "village_mmr": "မြခါးပတ်",
+   "pcode": 177164,
+   "vt": "Pyin Kyaung",
+   "dist_m": 440,
+   "ls_ha_1km": 13.35,
+   "buildings_1km": 485,
+   "lon": 98.15047,
+   "lat": 13.86777
+  },
+  {
+   "village": "Kyauk Ni Maw",
+   "village_mmr": "ကျောက်နီမော်",
+   "pcode": 177227,
+   "vt": "Kyauk Ni Maw",
+   "dist_m": 439,
+   "ls_ha_1km": 10.18,
+   "buildings_1km": 518,
+   "lon": 98.18098,
+   "lat": 13.65575
+  },
+  {
+   "village": "Kan Pa Ni",
+   "village_mmr": "ကမ်းပနီ",
+   "pcode": 222696,
+   "vt": "Kyauk Sin",
+   "dist_m": 267,
+   "ls_ha_1km": 9.41,
+   "buildings_1km": 172,
+   "lon": 98.08086,
+   "lat": 14.06129
+  },
+  {
+   "village": "Pein Hne Taw",
+   "village_mmr": "ပိန္နဲတော",
+   "pcode": 177155,
+   "vt": "Auk Yae Hpyu",
+   "dist_m": 464,
+   "ls_ha_1km": 8.08,
+   "buildings_1km": 231,
+   "lon": 98.13263,
+   "lat": 13.90934
+  },
+  {
+   "village": "Htein Gyi",
+   "village_mmr": "ထိန်ကြီး",
+   "pcode": 177157,
+   "vt": "Auk Yae Hpyu",
+   "dist_m": 525,
+   "ls_ha_1km": 7.89,
+   "buildings_1km": 550,
+   "lon": 98.13529,
+   "lat": 13.90514
+  },
+  {
+   "village": "Nyin Maw",
+   "village_mmr": "ညင်းမော်",
+   "pcode": 177144,
+   "vt": "Nyin Maw",
+   "dist_m": 119,
+   "ls_ha_1km": 7.35,
+   "buildings_1km": 180,
+   "lon": 98.12589,
+   "lat": 13.9416
+  },
+  {
+   "village": "Than Hlyin",
+   "village_mmr": "သံလျှင်",
+   "pcode": 177211,
+   "vt": "Tha Pyay Shaung",
+   "dist_m": 129,
+   "ls_ha_1km": 6.94,
+   "buildings_1km": 793,
+   "lon": 98.16091,
+   "lat": 13.83311
+  },
+  {
+   "village": "Inn Ga Ni Twin",
+   "village_mmr": "အင်းဂနီတွင်း",
+   "pcode": 177228,
+   "vt": "Kyauk Ni Maw",
+   "dist_m": 198,
+   "ls_ha_1km": 6.86,
+   "buildings_1km": 232,
+   "lon": 98.18146,
+   "lat": 13.66845
+  },
+  {
+   "village": "Inn Bu",
+   "village_mmr": "အင်းဘူး",
+   "pcode": 177145,
+   "vt": "Nyin Maw",
+   "dist_m": 479,
+   "ls_ha_1km": 6.25,
+   "buildings_1km": 125,
+   "lon": 98.12211,
+   "lat": 13.94922
+  },
+  {
+   "village": "Yin Boke",
+   "village_mmr": "ရင်ဘုတ်",
+   "pcode": 177146,
+   "vt": "Nyin Maw",
+   "dist_m": 580,
+   "ls_ha_1km": 5.72,
+   "buildings_1km": 150,
+   "lon": 98.12622,
+   "lat": 13.93131
+  },
+  {
+   "village": "Ka Det Gyi",
+   "village_mmr": "ကဒက်ကြီး",
+   "pcode": 177160,
+   "vt": "Ka Det Gyi (Khun Hnit Thein)",
+   "dist_m": 708,
+   "ls_ha_1km": 5.71,
+   "buildings_1km": 861,
+   "lon": 98.1524,
+   "lat": 13.8798
+  },
+  {
+   "village": "Tha Pyay Shaung",
+   "village_mmr": "သပြေရှောင်",
+   "pcode": 177210,
+   "vt": "Tha Pyay Shaung",
+   "dist_m": 726,
+   "ls_ha_1km": 5.61,
+   "buildings_1km": 757,
+   "lon": 98.16515,
+   "lat": 13.82825
+  },
+  {
+   "village": "Lel Hla",
+   "village_mmr": "လယ်လှ",
+   "pcode": 177204,
+   "vt": "Tha Kyet Taw",
+   "dist_m": 815,
+   "ls_ha_1km": 5.55,
+   "buildings_1km": 603,
+   "lon": 98.15368,
+   "lat": 13.75663
+  },
+  {
+   "village": "Nyaw Pyin",
+   "village_mmr": "ညောပြင်",
+   "pcode": 177230,
+   "vt": "Auk Kyauk Wut",
+   "dist_m": 428,
+   "ls_ha_1km": 5.36,
+   "buildings_1km": 741,
+   "lon": 98.14722,
+   "lat": 13.63473
+  },
+  {
+   "village": "Za Lut",
+   "village_mmr": "ဇလွတ်",
+   "pcode": 177215,
+   "vt": "Za Lut",
+   "dist_m": 671,
+   "ls_ha_1km": 4.29,
+   "buildings_1km": 307,
+   "lon": 98.17391,
+   "lat": 13.68818
+  },
+  {
+   "village": "Hin Cho Taw",
+   "village_mmr": "ဟင်းချိုတော",
+   "pcode": 177212,
+   "vt": "Tha Pyay Shaung",
+   "dist_m": 755,
+   "ls_ha_1km": 3.47,
+   "buildings_1km": 360,
+   "lon": 98.16243,
+   "lat": 13.83975
+  },
+  {
+   "village": "Sun Taung Maw",
+   "village_mmr": "စွန်တောင်မော်",
+   "pcode": 177194,
+   "vt": "Sa Khan Gyi",
+   "dist_m": 335,
+   "ls_ha_1km": 3.43,
+   "buildings_1km": 148,
+   "lon": 98.15619,
+   "lat": 14.14591
+  },
+  {
+   "village": "Auk Yae Hpyu",
+   "village_mmr": "အောက်ရေဖြူ",
+   "pcode": 177153,
+   "vt": "Auk Yae Hpyu",
+   "dist_m": 679,
+   "ls_ha_1km": 3.41,
+   "buildings_1km": 1205,
+   "lon": 98.14082,
+   "lat": 13.89859
+  },
+  {
+   "village": "Hpwar Boke Pyin",
+   "village_mmr": "ဖွားဘုတ်ပြင်",
+   "pcode": 177195,
+   "vt": "Sa Khan Gyi",
+   "dist_m": 92,
+   "ls_ha_1km": 3.16,
+   "buildings_1km": 368,
+   "lon": 98.14331,
+   "lat": 14.16585
+  },
+  {
+   "village": "Wea Ma Kaik",
+   "village_mmr": "ဝဲမကိုက်",
+   "pcode": 177219,
+   "vt": "Kyauk Twin",
+   "dist_m": 625,
+   "ls_ha_1km": 3.08,
+   "buildings_1km": 64,
+   "lon": 98.11603,
+   "lat": 13.70291
+  },
+  {
+   "village": "Pan Seik",
+   "village_mmr": "ပန်းစိပ်",
+   "pcode": 177196,
+   "vt": "Sa Khan Gyi",
+   "dist_m": 542,
+   "ls_ha_1km": 2.95,
+   "buildings_1km": 143,
+   "lon": 98.15823,
+   "lat": 14.14587
+  },
+  {
+   "village": "Ra Be",
+   "village_mmr": "ရဘဲ",
+   "pcode": 177207,
+   "vt": "Tha Kyet Taw",
+   "dist_m": 385,
+   "ls_ha_1km": 2.93,
+   "buildings_1km": 336,
+   "lon": 98.15237,
+   "lat": 13.72573
+  },
+  {
+   "village": "Nyaungdon",
+   "village_mmr": "ညောင်တုန်း",
+   "pcode": 177161,
+   "vt": "Ka Det Gyi (Khun Hnit Thein)",
+   "dist_m": 343,
+   "ls_ha_1km": 2.87,
+   "buildings_1km": 959,
+   "lon": 98.15495,
+   "lat": 13.87689
+  },
+  {
+   "village": "Pyin Gyi",
+   "village_mmr": "ပြင်ကြီး",
+   "pcode": 177216,
+   "vt": "Za Lut",
+   "dist_m": 769,
+   "ls_ha_1km": 2.86,
+   "buildings_1km": 315,
+   "lon": 98.17466,
+   "lat": 13.6887
+  },
+  {
+   "village": "Na Khan Taw",
+   "village_mmr": "နခံတော",
+   "pcode": 177198,
+   "vt": "Na Khan Taw",
+   "dist_m": 371,
+   "ls_ha_1km": 2.5,
+   "buildings_1km": 1052,
+   "lon": 98.17473,
+   "lat": 14.10872
+  },
+  {
+   "village": "Pa Nyit",
+   "village_mmr": "ပညစ်",
+   "pcode": 177151,
+   "vt": "Pa Nyit",
+   "dist_m": 353,
+   "ls_ha_1km": 2.45,
+   "buildings_1km": 200,
+   "lon": 98.06927,
+   "lat": 14.00735
+  },
+  {
+   "village": "Nga Ye Chaung",
+   "village_mmr": "ငရဲချောင်း",
+   "pcode": 177225,
+   "vt": "Kyauk Wut Pyin",
+   "dist_m": 590,
+   "ls_ha_1km": 2.23,
+   "buildings_1km": 264,
+   "lon": 98.1677,
+   "lat": 13.6442
+  },
+  {
+   "village": "Shan Maw",
+   "village_mmr": "ရှမ်းမော်",
+   "pcode": 177152,
+   "vt": "Pa Nyit",
+   "dist_m": 119,
+   "ls_ha_1km": 1.89,
+   "buildings_1km": 55,
+   "lon": 98.06092,
+   "lat": 13.98017
+  },
+  {
+   "village": "Kyauk Pon",
+   "village_mmr": "ကျောက်ပုံ",
+   "pcode": 177206,
+   "vt": "Tha Kyet Taw",
+   "dist_m": 553,
+   "ls_ha_1km": 1.81,
+   "buildings_1km": 344,
+   "lon": 98.14897,
+   "lat": 13.7354
+  },
+  {
+   "village": "Htein Thit",
+   "village_mmr": "ထိန်သစ်",
+   "pcode": 177200,
+   "vt": "Ka Myaw Kin",
+   "dist_m": 313,
+   "ls_ha_1km": 1.77,
+   "buildings_1km": 1193,
+   "lon": 98.17142,
+   "lat": 14.10408
+  },
+  {
+   "village": "Kyauk Wut Pyin",
+   "village_mmr": "ကျောက်ဝပ်ပြင်",
+   "pcode": 177224,
+   "vt": "Kyauk Wut Pyin",
+   "dist_m": 564,
+   "ls_ha_1km": 1.77,
+   "buildings_1km": 259,
+   "lon": 98.16692,
+   "lat": 13.64218
+  },
+  {
+   "village": "Kyauk Twin",
+   "village_mmr": "ကျောက်တွင်း",
+   "pcode": 177217,
+   "vt": "Kyauk Twin",
+   "dist_m": 288,
+   "ls_ha_1km": 1.54,
+   "buildings_1km": 130,
+   "lon": 98.11498,
+   "lat": 13.71817
+  }
+ ],
+ "exposure": {
+  "buildings_total": 33566,
+  "buildings_inside": 142,
+  "buildings_within_50m": 560,
+  "road_m_inside": {
+   "MIMU": 1103.0,
+   "OSM": 17396.0
+  },
+  "road_crossings": 84,
+  "villages_within_500m": 29,
+  "villages_total": 113,
+  "facilities": {
+   "schools": {
+    "total": 76,
+    "within_250m": 10,
+    "within_500m": 20
+   },
+   "health": {
+    "total": 3,
+    "within_250m": 0,
+    "within_500m": 0
+   }
+  }
+ },
+ "factors": {
+  "slope": [
+   {
+    "class": "0-5",
+    "area_km2": 353.47,
+    "landslide_ha": 263.07,
+    "density_pct": 0.744,
+    "fr": 0.24
+   },
+   {
+    "class": "5-10",
+    "area_km2": 99.39,
+    "landslide_ha": 374.82,
+    "density_pct": 3.771,
+    "fr": 1.21
+   },
+   {
+    "class": "10-15",
+    "area_km2": 72.05,
+    "landslide_ha": 347.16,
+    "density_pct": 4.818,
+    "fr": 1.54
+   },
+   {
+    "class": "15-20",
+    "area_km2": 70.98,
+    "landslide_ha": 320.35,
+    "density_pct": 4.513,
+    "fr": 1.44
+   },
+   {
+    "class": "20-25",
+    "area_km2": 69.75,
+    "landslide_ha": 339.37,
+    "density_pct": 4.865,
+    "fr": 1.56
+   },
+   {
+    "class": "25-30",
+    "area_km2": 54.39,
+    "landslide_ha": 342.04,
+    "density_pct": 6.289,
+    "fr": 2.01
+   },
+   {
+    "class": "30-35",
+    "area_km2": 31.39,
+    "landslide_ha": 251.17,
+    "density_pct": 8.003,
+    "fr": 2.56
+   },
+   {
+    "class": ">35",
+    "area_km2": 18.85,
+    "landslide_ha": 172.03,
+    "density_pct": 9.125,
+    "fr": 2.92
+   }
+  ],
+  "elevation": [
+   {
+    "class": "<25",
+    "area_km2": 391.0,
+    "landslide_ha": 295.58,
+    "density_pct": 0.756,
+    "fr": 0.24
+   },
+   {
+    "class": "25-50",
+    "area_km2": 90.22,
+    "landslide_ha": 356.01,
+    "density_pct": 3.946,
+    "fr": 1.26
+   },
+   {
+    "class": "50-100",
+    "area_km2": 80.01,
+    "landslide_ha": 521.14,
+    "density_pct": 6.514,
+    "fr": 2.08
+   },
+   {
+    "class": "100-150",
+    "area_km2": 58.8,
+    "landslide_ha": 391.53,
+    "density_pct": 6.659,
+    "fr": 2.13
+   },
+   {
+    "class": "150-200",
+    "area_km2": 45.98,
+    "landslide_ha": 309.24,
+    "density_pct": 6.725,
+    "fr": 2.15
+   },
+   {
+    "class": "200-300",
+    "area_km2": 61.3,
+    "landslide_ha": 372.53,
+    "density_pct": 6.077,
+    "fr": 1.94
+   },
+   {
+    "class": "300-400",
+    "area_km2": 30.25,
+    "landslide_ha": 134.64,
+    "density_pct": 4.45,
+    "fr": 1.42
+   },
+   {
+    "class": ">400",
+    "area_km2": 12.72,
+    "landslide_ha": 29.34,
+    "density_pct": 2.307,
+    "fr": 0.74
+   }
+  ],
+  "aspect": [
+   {
+    "class": "N",
+    "area_km2": 39.96,
+    "landslide_ha": 259.37,
+    "density_pct": 6.49,
+    "fr": 1.26
+   },
+   {
+    "class": "NE",
+    "area_km2": 53.21,
+    "landslide_ha": 447.52,
+    "density_pct": 8.41,
+    "fr": 1.63
+   },
+   {
+    "class": "E",
+    "area_km2": 63.54,
+    "landslide_ha": 494.11,
+    "density_pct": 7.777,
+    "fr": 1.51
+   },
+   {
+    "class": "SE",
+    "area_km2": 47.85,
+    "landslide_ha": 346.82,
+    "density_pct": 7.248,
+    "fr": 1.41
+   },
+   {
+    "class": "S",
+    "area_km2": 42.64,
+    "landslide_ha": 214.2,
+    "density_pct": 5.023,
+    "fr": 0.98
+   },
+   {
+    "class": "SW",
+    "area_km2": 57.49,
+    "landslide_ha": 113.51,
+    "density_pct": 1.974,
+    "fr": 0.38
+   },
+   {
+    "class": "W",
+    "area_km2": 65.3,
+    "landslide_ha": 96.5,
+    "density_pct": 1.478,
+    "fr": 0.29
+   },
+   {
+    "class": "NW",
+    "area_km2": 46.8,
+    "landslide_ha": 174.91,
+    "density_pct": 3.737,
+    "fr": 0.73
+   }
+  ],
+  "landcover": [
+   {
+    "class": "Tree cover",
+    "area_km2": 513.43,
+    "landslide_ha": 2382.81,
+    "density_pct": 4.641,
+    "fr": 1.48
+   },
+   {
+    "class": "Shrubland",
+    "area_km2": 0.28,
+    "landslide_ha": 0.0,
+    "density_pct": 0.0,
+    "fr": 0.0
+   },
+   {
+    "class": "Grassland",
+    "area_km2": 39.6,
+    "landslide_ha": 22.9,
+    "density_pct": 0.578,
+    "fr": 0.18
+   },
+   {
+    "class": "Cropland",
+    "area_km2": 151.19,
+    "landslide_ha": 2.0,
+    "density_pct": 0.013,
+    "fr": 0.0
+   },
+   {
+    "class": "Built-up",
+    "area_km2": 9.07,
+    "landslide_ha": 2.01,
+    "density_pct": 0.222,
+    "fr": 0.07
+   },
+   {
+    "class": "Bare / sparse",
+    "area_km2": 4.7,
+    "landslide_ha": 0.29,
+    "density_pct": 0.062,
+    "fr": 0.02
+   },
+   {
+    "class": "Herbaceous wetland",
+    "area_km2": 0.2,
+    "landslide_ha": 0.0,
+    "density_pct": 0.0,
+    "fr": 0.0
+   },
+   {
+    "class": "Mangroves",
+    "area_km2": 51.81,
+    "landslide_ha": 0.0,
+    "density_pct": 0.0,
+    "fr": 0.0
+   }
+  ],
+  "dist_stream": [
+   {
+    "class": "<50 m",
+    "area_km2": 68.46,
+    "landslide_ha": 184.5,
+    "density_pct": 2.695,
+    "fr": 0.86
+   },
+   {
+    "class": "50-100 m",
+    "area_km2": 24.61,
+    "landslide_ha": 74.97,
+    "density_pct": 3.046,
+    "fr": 0.97
+   },
+   {
+    "class": "100-200 m",
+    "area_km2": 43.83,
+    "landslide_ha": 100.67,
+    "density_pct": 2.297,
+    "fr": 0.73
+   },
+   {
+    "class": "200-400 m",
+    "area_km2": 78.31,
+    "landslide_ha": 292.03,
+    "density_pct": 3.729,
+    "fr": 1.19
+   },
+   {
+    "class": "400-800 m",
+    "area_km2": 129.76,
+    "landslide_ha": 686.2,
+    "density_pct": 5.288,
+    "fr": 1.69
+   },
+   {
+    "class": ">800 m",
+    "area_km2": 425.3,
+    "landslide_ha": 1071.64,
+    "density_pct": 2.52,
+    "fr": 0.81
+   }
+  ]
+ },
+ "optical": {
+  "det_px_clear": 85796,
+  "det_px_total": 241001,
+  "det_share_drop015": 0.745,
+  "bg_share_drop015": 0.151,
+  "det_median_dndvi": -0.417,
+  "bg_median_dndvi": -0.047,
+  "hist_bins": [
+   -0.8,
+   -0.75,
+   -0.7,
+   -0.65,
+   -0.6,
+   -0.55,
+   -0.5,
+   -0.45,
+   -0.4,
+   -0.35,
+   -0.3,
+   -0.25,
+   -0.2,
+   -0.15,
+   -0.1,
+   -0.05,
+   0.0,
+   0.05,
+   0.1,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.35,
+   0.4
+  ],
+  "hist_det": [
+   4886,
+   7087,
+   6581,
+   5798,
+   5146,
+   4507,
+   4475,
+   3961,
+   3849,
+   3611,
+   3620,
+   3897,
+   4695,
+   5853,
+   6891,
+   5745,
+   2140,
+   655,
+   311,
+   148,
+   91,
+   35,
+   15,
+   3
+  ],
+  "hist_bg": [
+   853,
+   1133,
+   1186,
+   1171,
+   1278,
+   1344,
+   1488,
+   1541,
+   1889,
+   2313,
+   3076,
+   4349,
+   8287,
+   20234,
+   46416,
+   61927,
+   26663,
+   7933,
+   3229,
+   1573,
+   821,
+   454,
+   276,
+   129
+  ]
+ },
+ "s1_timeseries": [
+  {
+   "date": "2026-06-09",
+   "platform": "sentinel-1a",
+   "vv_landslide": -5.9,
+   "vv_stable": -6.23,
+   "vh_landslide": -11.89,
+   "vh_stable": -12.6
+  },
+  {
+   "date": "2026-06-21",
+   "platform": "sentinel-1a",
+   "vv_landslide": -6.22,
+   "vv_stable": -6.5,
+   "vh_landslide": -12.28,
+   "vh_stable": -12.92
+  },
+  {
+   "date": "2026-06-28",
+   "platform": "sentinel-1d",
+   "vv_landslide": -5.92,
+   "vv_stable": -6.24,
+   "vh_landslide": -12.14,
+   "vh_stable": -12.64
+  },
+  {
+   "date": "2026-07-10",
+   "platform": "sentinel-1d",
+   "vv_landslide": -6.26,
+   "vv_stable": -6.57,
+   "vh_landslide": -12.62,
+   "vh_stable": -13.1
+  },
+  {
+   "date": "2026-07-22",
+   "platform": "sentinel-1d",
+   "vv_landslide": -5.65,
+   "vv_stable": -5.9,
+   "vh_landslide": -11.84,
+   "vh_stable": -12.36
+  },
+  {
+   "date": "2026-08-03",
+   "platform": "sentinel-1d",
+   "vv_landslide": -6.1,
+   "vv_stable": -6.18,
+   "vh_landslide": -12.5,
+   "vh_stable": -12.94
+  },
+  {
+   "date": "2026-08-15",
+   "platform": "sentinel-1d",
+   "vv_landslide": -5.66,
+   "vv_stable": -5.75,
+   "vh_landslide": -11.94,
+   "vh_stable": -12.36
+  },
+  {
+   "date": "2026-08-27",
+   "platform": "sentinel-1d",
+   "vv_landslide": -5.82,
+   "vv_stable": -5.91,
+   "vh_landslide": -12.06,
+   "vh_stable": -12.46
+  },
+  {
+   "date": "2026-09-08",
+   "platform": "sentinel-1d",
+   "vv_landslide": -5.58,
+   "vv_stable": -5.63,
+   "vh_landslide": -11.81,
+   "vh_stable": -12.15
+  },
+  {
+   "date": "2026-09-20",
+   "platform": "sentinel-1d",
+   "vv_landslide": -6.12,
+   "vv_stable": -6.13,
+   "vh_landslide": -12.28,
+   "vh_stable": -12.68
+  },
+  {
+   "date": "2026-10-02",
+   "platform": "sentinel-1d",
+   "vv_landslide": -8.02,
+   "vv_stable": -6.38,
+   "vh_landslide": -14.84,
+   "vh_stable": -12.36
+  }
+ ],
+ "rain": {
+  "daily": [
+   {
+    "date": "2026-06-01",
+    "mean_mm": 15.9,
+    "max_mm": 30.5
+   },
+   {
+    "date": "2026-06-02",
+    "mean_mm": 29.4,
+    "max_mm": 40.3
+   },
+   {
+    "date": "2026-06-03",
+    "mean_mm": 55.6,
+    "max_mm": 116.6
+   },
+   {
+    "date": "2026-06-04",
+    "mean_mm": 55.6,
+    "max_mm": 75.6
+   },
+   {
+    "date": "2026-06-05",
+    "mean_mm": 36.9,
+    "max_mm": 59.5
+   },
+   {
+    "date": "2026-06-06",
+    "mean_mm": 45.8,
+    "max_mm": 56.5
+   },
+   {
+    "date": "2026-06-07",
+    "mean_mm": 17.7,
+    "max_mm": 21.2
+   },
+   {
+    "date": "2026-06-08",
+    "mean_mm": 17.6,
+    "max_mm": 20.7
+   },
+   {
+    "date": "2026-06-09",
+    "mean_mm": 19.2,
+    "max_mm": 23.2
+   },
+   {
+    "date": "2026-06-10",
+    "mean_mm": 44.8,
+    "max_mm": 53.2
+   },
+   {
+    "date": "2026-06-11",
+    "mean_mm": 25.2,
+    "max_mm": 30.5
+   },
+   {
+    "date": "2026-06-12",
+    "mean_mm": 27.7,
+    "max_mm": 41.1
+   },
+   {
+    "date": "2026-06-13",
+    "mean_mm": 8.9,
+    "max_mm": 14.5
+   },
+   {
+    "date": "2026-06-14",
+    "mean_mm": 8.1,
+    "max_mm": 11.5
+   },
+   {
+    "date": "2026-06-15",
+    "mean_mm": 7.5,
+    "max_mm": 12.7
+   },
+   {
+    "date": "2026-06-16",
+    "mean_mm": 9.3,
+    "max_mm": 13.2
+   },
+   {
+    "date": "2026-06-17",
+    "mean_mm": 5.4,
+    "max_mm": 10.2
+   },
+   {
+    "date": "2026-06-18",
+    "mean_mm": 5.1,
+    "max_mm": 7.7
+   },
+   {
+    "date": "2026-06-19",
+    "mean_mm": 8.6,
+    "max_mm": 16.3
+   },
+   {
+    "date": "2026-06-20",
+    "mean_mm": 4.2,
+    "max_mm": 8.8
+   },
+   {
+    "date": "2026-06-21",
+    "mean_mm": 17.1,
+    "max_mm": 41.3
+   },
+   {
+    "date": "2026-06-22",
+    "mean_mm": 1.0,
+    "max_mm": 2.7
+   },
+   {
+    "date": "2026-06-23",
+    "mean_mm": 6.0,
+    "max_mm": 11.2
+   },
+   {
+    "date": "2026-06-24",
+    "mean_mm": 26.4,
+    "max_mm": 34.3
+   },
+   {
+    "date": "2026-06-25",
+    "mean_mm": 15.8,
+    "max_mm": 22.6
+   },
+   {
+    "date": "2026-06-26",
+    "mean_mm": 11.5,
+    "max_mm": 16.5
+   },
+   {
+    "date": "2026-06-27",
+    "mean_mm": 28.6,
+    "max_mm": 42.0
+   },
+   {
+    "date": "2026-06-28",
+    "mean_mm": 37.0,
+    "max_mm": 46.4
+   },
+   {
+    "date": "2026-06-29",
+    "mean_mm": 56.9,
+    "max_mm": 63.1
+   },
+   {
+    "date": "2026-06-30",
+    "mean_mm": 42.6,
+    "max_mm": 46.3
+   },
+   {
+    "date": "2026-07-01",
+    "mean_mm": 22.5,
+    "max_mm": 40.7
+   },
+   {
+    "date": "2026-07-02",
+    "mean_mm": 38.0,
+    "max_mm": 45.5
+   },
+   {
+    "date": "2026-07-03",
+    "mean_mm": 19.4,
+    "max_mm": 24.8
+   },
+   {
+    "date": "2026-07-04",
+    "mean_mm": 42.4,
+    "max_mm": 53.7
+   },
+   {
+    "date": "2026-07-05",
+    "mean_mm": 22.1,
+    "max_mm": 27.7
+   },
+   {
+    "date": "2026-07-06",
+    "mean_mm": 11.3,
+    "max_mm": 16.0
+   },
+   {
+    "date": "2026-07-07",
+    "mean_mm": 11.5,
+    "max_mm": 14.3
+   },
+   {
+    "date": "2026-07-08",
+    "mean_mm": 9.1,
+    "max_mm": 13.3
+   },
+   {
+    "date": "2026-07-09",
+    "mean_mm": 13.9,
+    "max_mm": 22.3
+   },
+   {
+    "date": "2026-07-10",
+    "mean_mm": 18.0,
+    "max_mm": 25.7
+   },
+   {
+    "date": "2026-07-11",
+    "mean_mm": 33.3,
+    "max_mm": 47.4
+   },
+   {
+    "date": "2026-07-12",
+    "mean_mm": 91.7,
+    "max_mm": 112.5
+   },
+   {
+    "date": "2026-07-13",
+    "mean_mm": 62.5,
+    "max_mm": 72.7
+   },
+   {
+    "date": "2026-07-14",
+    "mean_mm": 45.2,
+    "max_mm": 50.0
+   },
+   {
+    "date": "2026-07-15",
+    "mean_mm": 33.7,
+    "max_mm": 40.3
+   },
+   {
+    "date": "2026-07-16",
+    "mean_mm": 32.7,
+    "max_mm": 38.7
+   },
+   {
+    "date": "2026-07-17",
+    "mean_mm": 6.2,
+    "max_mm": 9.6
+   },
+   {
+    "date": "2026-07-18",
+    "mean_mm": 2.9,
+    "max_mm": 4.0
+   },
+   {
+    "date": "2026-07-19",
+    "mean_mm": 1.6,
+    "max_mm": 3.0
+   },
+   {
+    "date": "2026-07-20",
+    "mean_mm": 2.5,
+    "max_mm": 3.5
+   },
+   {
+    "date": "2026-07-21",
+    "mean_mm": 15.4,
+    "max_mm": 20.4
+   },
+   {
+    "date": "2026-07-22",
+    "mean_mm": 16.6,
+    "max_mm": 23.3
+   },
+   {
+    "date": "2026-07-23",
+    "mean_mm": 15.6,
+    "max_mm": 17.0
+   },
+   {
+    "date": "2026-07-24",
+    "mean_mm": 21.9,
+    "max_mm": 33.5
+   },
+   {
+    "date": "2026-07-25",
+    "mean_mm": 9.4,
+    "max_mm": 12.6
+   },
+   {
+    "date": "2026-07-26",
+    "mean_mm": 26.0,
+    "max_mm": 37.4
+   },
+   {
+    "date": "2026-07-27",
+    "mean_mm": 50.4,
+    "max_mm": 59.2
+   },
+   {
+    "date": "2026-07-28",
+    "mean_mm": 51.9,
+    "max_mm": 71.9
+   },
+   {
+    "date": "2026-07-29",
+    "mean_mm": 19.4,
+    "max_mm": 26.2
+   },
+   {
+    "date": "2026-07-30",
+    "mean_mm": 22.9,
+    "max_mm": 39.8
+   },
+   {
+    "date": "2026-07-31",
+    "mean_mm": 27.7,
+    "max_mm": 47.7
+   },
+   {
+    "date": "2026-08-01",
+    "mean_mm": 29.4,
+    "max_mm": 38.4
+   },
+   {
+    "date": "2026-08-02",
+    "mean_mm": 29.0,
+    "max_mm": 44.4
+   },
+   {
+    "date": "2026-08-03",
+    "mean_mm": 11.3,
+    "max_mm": 14.3
+   },
+   {
+    "date": "2026-08-04",
+    "mean_mm": 6.0,
+    "max_mm": 12.7
+   },
+   {
+    "date": "2026-08-05",
+    "mean_mm": 10.2,
+    "max_mm": 14.9
+   },
+   {
+    "date": "2026-08-06",
+    "mean_mm": 20.1,
+    "max_mm": 26.6
+   },
+   {
+    "date": "2026-08-07",
+    "mean_mm": 32.6,
+    "max_mm": 46.5
+   },
+   {
+    "date": "2026-08-08",
+    "mean_mm": 30.5,
+    "max_mm": 34.7
+   },
+   {
+    "date": "2026-08-09",
+    "mean_mm": 39.9,
+    "max_mm": 45.6
+   },
+   {
+    "date": "2026-08-10",
+    "mean_mm": 53.5,
+    "max_mm": 61.9
+   },
+   {
+    "date": "2026-08-11",
+    "mean_mm": 61.8,
+    "max_mm": 70.0
+   },
+   {
+    "date": "2026-08-12",
+    "mean_mm": 27.7,
+    "max_mm": 33.3
+   },
+   {
+    "date": "2026-08-13",
+    "mean_mm": 39.9,
+    "max_mm": 53.1
+   },
+   {
+    "date": "2026-08-14",
+    "mean_mm": 19.6,
+    "max_mm": 26.3
+   },
+   {
+    "date": "2026-08-15",
+    "mean_mm": 18.9,
+    "max_mm": 27.1
+   },
+   {
+    "date": "2026-08-16",
+    "mean_mm": 26.3,
+    "max_mm": 33.4
+   },
+   {
+    "date": "2026-08-17",
+    "mean_mm": 16.4,
+    "max_mm": 27.0
+   },
+   {
+    "date": "2026-08-18",
+    "mean_mm": 13.8,
+    "max_mm": 20.3
+   },
+   {
+    "date": "2026-08-19",
+    "mean_mm": 43.8,
+    "max_mm": 49.7
+   },
+   {
+    "date": "2026-08-20",
+    "mean_mm": 95.3,
+    "max_mm": 115.9
+   },
+   {
+    "date": "2026-08-21",
+    "mean_mm": 45.2,
+    "max_mm": 54.0
+   },
+   {
+    "date": "2026-08-22",
+    "mean_mm": 53.3,
+    "max_mm": 61.4
+   },
+   {
+    "date": "2026-08-23",
+    "mean_mm": 43.6,
+    "max_mm": 54.2
+   },
+   {
+    "date": "2026-08-24",
+    "mean_mm": 14.9,
+    "max_mm": 22.3
+   },
+   {
+    "date": "2026-08-25",
+    "mean_mm": 22.4,
+    "max_mm": 27.3
+   },
+   {
+    "date": "2026-08-26",
+    "mean_mm": 78.1,
+    "max_mm": 86.9
+   },
+   {
+    "date": "2026-08-27",
+    "mean_mm": 60.6,
+    "max_mm": 74.2
+   },
+   {
+    "date": "2026-08-28",
+    "mean_mm": 48.9,
+    "max_mm": 58.2
+   },
+   {
+    "date": "2026-08-29",
+    "mean_mm": 34.3,
+    "max_mm": 50.5
+   },
+   {
+    "date": "2026-08-30",
+    "mean_mm": 25.7,
+    "max_mm": 40.3
+   },
+   {
+    "date": "2026-08-31",
+    "mean_mm": 18.1,
+    "max_mm": 28.7
+   },
+   {
+    "date": "2026-09-01",
+    "mean_mm": 10.2,
+    "max_mm": 14.0
+   },
+   {
+    "date": "2026-09-02",
+    "mean_mm": 10.8,
+    "max_mm": 14.2
+   },
+   {
+    "date": "2026-09-03",
+    "mean_mm": 2.9,
+    "max_mm": 5.2
+   },
+   {
+    "date": "2026-09-04",
+    "mean_mm": 1.8,
+    "max_mm": 2.5
+   },
+   {
+    "date": "2026-09-05",
+    "mean_mm": 8.9,
+    "max_mm": 15.9
+   },
+   {
+    "date": "2026-09-06",
+    "mean_mm": 24.1,
+    "max_mm": 27.7
+   },
+   {
+    "date": "2026-09-07",
+    "mean_mm": 17.5,
+    "max_mm": 21.5
+   },
+   {
+    "date": "2026-09-08",
+    "mean_mm": 31.6,
+    "max_mm": 47.0
+   },
+   {
+    "date": "2026-09-09",
+    "mean_mm": 11.3,
+    "max_mm": 16.5
+   },
+   {
+    "date": "2026-09-10",
+    "mean_mm": 13.8,
+    "max_mm": 21.1
+   },
+   {
+    "date": "2026-09-11",
+    "mean_mm": 17.5,
+    "max_mm": 33.9
+   },
+   {
+    "date": "2026-09-12",
+    "mean_mm": 5.9,
+    "max_mm": 9.5
+   },
+   {
+    "date": "2026-09-13",
+    "mean_mm": 9.5,
+    "max_mm": 18.6
+   },
+   {
+    "date": "2026-09-14",
+    "mean_mm": 18.7,
+    "max_mm": 31.9
+   },
+   {
+    "date": "2026-09-15",
+    "mean_mm": 19.8,
+    "max_mm": 24.9
+   },
+   {
+    "date": "2026-09-16",
+    "mean_mm": 34.3,
+    "max_mm": 45.7
+   },
+   {
+    "date": "2026-09-17",
+    "mean_mm": 35.3,
+    "max_mm": 43.4
+   },
+   {
+    "date": "2026-09-18",
+    "mean_mm": 20.4,
+    "max_mm": 34.1
+   },
+   {
+    "date": "2026-09-19",
+    "mean_mm": 19.0,
+    "max_mm": 47.2
+   },
+   {
+    "date": "2026-09-20",
+    "mean_mm": 39.8,
+    "max_mm": 69.2
+   },
+   {
+    "date": "2026-09-21",
+    "mean_mm": 25.9,
+    "max_mm": 45.7
+   },
+   {
+    "date": "2026-09-22",
+    "mean_mm": 17.3,
+    "max_mm": 32.4
+   },
+   {
+    "date": "2026-09-23",
+    "mean_mm": 20.3,
+    "max_mm": 28.2
+   },
+   {
+    "date": "2026-09-24",
+    "mean_mm": 20.4,
+    "max_mm": 26.3
+   },
+   {
+    "date": "2026-09-25",
+    "mean_mm": 53.3,
+    "max_mm": 64.5
+   },
+   {
+    "date": "2026-09-26",
+    "mean_mm": 188.5,
+    "max_mm": 392.0
+   },
+   {
+    "date": "2026-09-27",
+    "mean_mm": 260.3,
+    "max_mm": 385.3
+   },
+   {
+    "date": "2026-09-28",
+    "mean_mm": 98.3,
+    "max_mm": 139.5
+   },
+   {
+    "date": "2026-09-29",
+    "mean_mm": 7.1,
+    "max_mm": 11.0
+   },
+   {
+    "date": "2026-09-30",
+    "mean_mm": 0.5,
+    "max_mm": 2.1
+   },
+   {
+    "date": "2026-10-01",
+    "mean_mm": 0.5,
+    "max_mm": 3.5
+   },
+   {
+    "date": "2026-10-02",
+    "mean_mm": 0.4,
+    "max_mm": 1.8
+   },
+   {
+    "date": "2026-10-03",
+    "mean_mm": 5.3,
+    "max_mm": 10.3
+   },
+   {
+    "date": "2026-10-04",
+    "mean_mm": 9.6,
+    "max_mm": 15.5
+   },
+   {
+    "date": "2026-10-05",
+    "mean_mm": 1.5,
+    "max_mm": 4.8
+   },
+   {
+    "date": "2026-10-06",
+    "mean_mm": 6.4,
+    "max_mm": 11.8
+   },
+   {
+    "date": "2026-10-07",
+    "mean_mm": 10.7,
+    "max_mm": 18.9
+   },
+   {
+    "date": "2026-10-08",
+    "mean_mm": 3.4,
+    "max_mm": 7.0
+   }
+  ],
+  "points": 13,
+  "annual_max": [
+   {
+    "year": 1991,
+    "max1": 91.0,
+    "max3": 222.2,
+    "max5": 311.0
+   },
+   {
+    "year": 1992,
+    "max1": 79.3,
+    "max3": 181.5,
+    "max5": 265.9
+   },
+   {
+    "year": 1993,
+    "max1": 93.3,
+    "max3": 227.0,
+    "max5": 280.7
+   },
+   {
+    "year": 1994,
+    "max1": 72.8,
+    "max3": 183.6,
+    "max5": 298.8
+   },
+   {
+    "year": 1995,
+    "max1": 93.9,
+    "max3": 228.1,
+    "max5": 306.2
+   },
+   {
+    "year": 1996,
+    "max1": 110.2,
+    "max3": 243.5,
+    "max5": 367.5
+   },
+   {
+    "year": 1997,
+    "max1": 99.1,
+    "max3": 246.6,
+    "max5": 407.6
+   },
+   {
+    "year": 1998,
+    "max1": 81.9,
+    "max3": 169.8,
+    "max5": 213.9
+   },
+   {
+    "year": 1999,
+    "max1": 86.8,
+    "max3": 184.3,
+    "max5": 261.4
+   },
+   {
+    "year": 2000,
+    "max1": 68.9,
+    "max3": 155.1,
+    "max5": 217.3
+   },
+   {
+    "year": 2001,
+    "max1": 66.3,
+    "max3": 165.6,
+    "max5": 234.2
+   },
+   {
+    "year": 2002,
+    "max1": 116.9,
+    "max3": 251.5,
+    "max5": 390.6
+   },
+   {
+    "year": 2003,
+    "max1": 98.2,
+    "max3": 242.9,
+    "max5": 327.0
+   },
+   {
+    "year": 2004,
+    "max1": 80.8,
+    "max3": 194.6,
+    "max5": 291.6
+   },
+   {
+    "year": 2005,
+    "max1": 109.1,
+    "max3": 261.4,
+    "max5": 364.4
+   },
+   {
+    "year": 2006,
+    "max1": 106.1,
+    "max3": 192.6,
+    "max5": 250.1
+   },
+   {
+    "year": 2007,
+    "max1": 118.7,
+    "max3": 244.0,
+    "max5": 333.3
+   },
+   {
+    "year": 2008,
+    "max1": 97.9,
+    "max3": 224.3,
+    "max5": 321.2
+   },
+   {
+    "year": 2009,
+    "max1": 111.1,
+    "max3": 222.8,
+    "max5": 280.4
+   },
+   {
+    "year": 2010,
+    "max1": 93.3,
+    "max3": 179.3,
+    "max5": 225.8
+   },
+   {
+    "year": 2011,
+    "max1": 95.7,
+    "max3": 219.6,
+    "max5": 281.5
+   },
+   {
+    "year": 2012,
+    "max1": 108.7,
+    "max3": 241.5,
+    "max5": 315.7
+   },
+   {
+    "year": 2013,
+    "max1": 87.4,
+    "max3": 238.3,
+    "max5": 339.3
+   },
+   {
+    "year": 2014,
+    "max1": 96.2,
+    "max3": 225.4,
+    "max5": 294.8
+   },
+   {
+    "year": 2015,
+    "max1": 73.1,
+    "max3": 181.6,
+    "max5": 283.9
+   },
+   {
+    "year": 2016,
+    "max1": 83.9,
+    "max3": 189.0,
+    "max5": 234.8
+   },
+   {
+    "year": 2017,
+    "max1": 117.7,
+    "max3": 228.4,
+    "max5": 334.5
+   },
+   {
+    "year": 2018,
+    "max1": 111.4,
+    "max3": 250.6,
+    "max5": 375.9
+   },
+   {
+    "year": 2019,
+    "max1": 193.0,
+    "max3": 317.8,
+    "max5": 391.9
+   },
+   {
+    "year": 2020,
+    "max1": 114.8,
+    "max3": 298.6,
+    "max5": 396.7
+   },
+   {
+    "year": 2021,
+    "max1": 90.9,
+    "max3": 215.6,
+    "max5": 281.3
+   },
+   {
+    "year": 2022,
+    "max1": 114.9,
+    "max3": 259.4,
+    "max5": 385.5
+   },
+   {
+    "year": 2023,
+    "max1": 154.7,
+    "max3": 235.6,
+    "max5": 312.7
+   },
+   {
+    "year": 2024,
+    "max1": 113.0,
+    "max3": 241.5,
+    "max5": 314.4
+   },
+   {
+    "year": 2025,
+    "max1": 77.5,
+    "max3": 188.7,
+    "max5": 277.3
+   },
+   {
+    "year": 2026,
+    "max1": 242.1,
+    "max3": 509.8,
+    "max5": 596.0
+   }
+  ],
+  "event_max3_mm": 509.8,
+  "event_max5_mm": 596.0,
+  "rank3": 1,
+  "rank5": 1,
+  "years": 35,
+  "record3_before": {
+   "year": 2019,
+   "mm": 317.8
+  },
+  "hourly": [
+   {
+    "t": "2026-09-20T00:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-20T01:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-20T02:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-20T03:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-20T04:00",
+    "mm": 1.1
+   },
+   {
+    "t": "2026-09-20T05:00",
+    "mm": 1.1
+   },
+   {
+    "t": "2026-09-20T06:00",
+    "mm": 2.1
+   },
+   {
+    "t": "2026-09-20T07:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-20T08:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-20T09:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-20T10:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-20T11:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-20T12:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-20T13:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-20T14:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-20T15:00",
+    "mm": 1.2
+   },
+   {
+    "t": "2026-09-20T16:00",
+    "mm": 3.2
+   },
+   {
+    "t": "2026-09-20T17:00",
+    "mm": 3.0
+   },
+   {
+    "t": "2026-09-20T18:00",
+    "mm": 3.4
+   },
+   {
+    "t": "2026-09-20T19:00",
+    "mm": 1.4
+   },
+   {
+    "t": "2026-09-20T20:00",
+    "mm": 2.6
+   },
+   {
+    "t": "2026-09-20T21:00",
+    "mm": 2.7
+   },
+   {
+    "t": "2026-09-20T22:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-20T23:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-21T00:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-21T01:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-21T02:00",
+    "mm": 1.2
+   },
+   {
+    "t": "2026-09-21T03:00",
+    "mm": 3.0
+   },
+   {
+    "t": "2026-09-21T04:00",
+    "mm": 2.8
+   },
+   {
+    "t": "2026-09-21T05:00",
+    "mm": 1.2
+   },
+   {
+    "t": "2026-09-21T06:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-21T07:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-21T08:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-21T09:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-21T10:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-21T11:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-21T12:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-21T13:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-21T14:00",
+    "mm": 1.7
+   },
+   {
+    "t": "2026-09-21T15:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-21T16:00",
+    "mm": 1.2
+   },
+   {
+    "t": "2026-09-21T17:00",
+    "mm": 1.3
+   },
+   {
+    "t": "2026-09-21T18:00",
+    "mm": 2.2
+   },
+   {
+    "t": "2026-09-21T19:00",
+    "mm": 1.3
+   },
+   {
+    "t": "2026-09-21T20:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-21T21:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-21T22:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-21T23:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-22T00:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-22T01:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-22T02:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-22T03:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-22T04:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-22T05:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-22T06:00",
+    "mm": 2.1
+   },
+   {
+    "t": "2026-09-22T07:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-22T08:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-22T09:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-22T10:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-22T11:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-22T12:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-22T13:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-22T14:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-22T15:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-22T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-22T17:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-22T18:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-22T19:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-22T20:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-22T21:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-22T22:00",
+    "mm": 1.0
+   },
+   {
+    "t": "2026-09-22T23:00",
+    "mm": 1.0
+   },
+   {
+    "t": "2026-09-23T00:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-23T01:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-23T02:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T03:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T04:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T05:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T06:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-23T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T08:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T09:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T10:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-23T11:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-23T12:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-23T13:00",
+    "mm": 1.1
+   },
+   {
+    "t": "2026-09-23T14:00",
+    "mm": 4.5
+   },
+   {
+    "t": "2026-09-23T15:00",
+    "mm": 3.1
+   },
+   {
+    "t": "2026-09-23T16:00",
+    "mm": 2.3
+   },
+   {
+    "t": "2026-09-23T17:00",
+    "mm": 2.8
+   },
+   {
+    "t": "2026-09-23T18:00",
+    "mm": 2.5
+   },
+   {
+    "t": "2026-09-23T19:00",
+    "mm": 2.2
+   },
+   {
+    "t": "2026-09-23T20:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-23T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-23T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-24T00:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-24T01:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-24T02:00",
+    "mm": 3.3
+   },
+   {
+    "t": "2026-09-24T03:00",
+    "mm": 2.8
+   },
+   {
+    "t": "2026-09-24T04:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-24T05:00",
+    "mm": 2.5
+   },
+   {
+    "t": "2026-09-24T06:00",
+    "mm": 5.5
+   },
+   {
+    "t": "2026-09-24T07:00",
+    "mm": 1.0
+   },
+   {
+    "t": "2026-09-24T08:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-24T09:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-24T10:00",
+    "mm": 1.0
+   },
+   {
+    "t": "2026-09-24T11:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-24T12:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-24T13:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-24T14:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-24T15:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-24T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-24T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-24T18:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-24T19:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-24T20:00",
+    "mm": 2.7
+   },
+   {
+    "t": "2026-09-24T21:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-24T22:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-24T23:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-25T00:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-25T01:00",
+    "mm": 3.7
+   },
+   {
+    "t": "2026-09-25T02:00",
+    "mm": 2.0
+   },
+   {
+    "t": "2026-09-25T03:00",
+    "mm": 4.2
+   },
+   {
+    "t": "2026-09-25T04:00",
+    "mm": 3.0
+   },
+   {
+    "t": "2026-09-25T05:00",
+    "mm": 2.9
+   },
+   {
+    "t": "2026-09-25T06:00",
+    "mm": 1.4
+   },
+   {
+    "t": "2026-09-25T07:00",
+    "mm": 1.4
+   },
+   {
+    "t": "2026-09-25T08:00",
+    "mm": 2.2
+   },
+   {
+    "t": "2026-09-25T09:00",
+    "mm": 3.5
+   },
+   {
+    "t": "2026-09-25T10:00",
+    "mm": 2.1
+   },
+   {
+    "t": "2026-09-25T11:00",
+    "mm": 2.5
+   },
+   {
+    "t": "2026-09-25T12:00",
+    "mm": 1.7
+   },
+   {
+    "t": "2026-09-25T13:00",
+    "mm": 4.1
+   },
+   {
+    "t": "2026-09-25T14:00",
+    "mm": 4.6
+   },
+   {
+    "t": "2026-09-25T15:00",
+    "mm": 1.8
+   },
+   {
+    "t": "2026-09-25T16:00",
+    "mm": 3.1
+   },
+   {
+    "t": "2026-09-25T17:00",
+    "mm": 3.3
+   },
+   {
+    "t": "2026-09-25T18:00",
+    "mm": 5.7
+   },
+   {
+    "t": "2026-09-25T19:00",
+    "mm": 1.8
+   },
+   {
+    "t": "2026-09-25T20:00",
+    "mm": 0.8
+   },
+   {
+    "t": "2026-09-25T21:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-25T22:00",
+    "mm": 0.9
+   },
+   {
+    "t": "2026-09-25T23:00",
+    "mm": 2.2
+   },
+   {
+    "t": "2026-09-26T00:00",
+    "mm": 2.6
+   },
+   {
+    "t": "2026-09-26T01:00",
+    "mm": 2.1
+   },
+   {
+    "t": "2026-09-26T02:00",
+    "mm": 1.9
+   },
+   {
+    "t": "2026-09-26T03:00",
+    "mm": 3.8
+   },
+   {
+    "t": "2026-09-26T04:00",
+    "mm": 2.6
+   },
+   {
+    "t": "2026-09-26T05:00",
+    "mm": 3.1
+   },
+   {
+    "t": "2026-09-26T06:00",
+    "mm": 6.0
+   },
+   {
+    "t": "2026-09-26T07:00",
+    "mm": 12.5
+   },
+   {
+    "t": "2026-09-26T08:00",
+    "mm": 13.0
+   },
+   {
+    "t": "2026-09-26T09:00",
+    "mm": 12.7
+   },
+   {
+    "t": "2026-09-26T10:00",
+    "mm": 14.3
+   },
+   {
+    "t": "2026-09-26T11:00",
+    "mm": 5.6
+   },
+   {
+    "t": "2026-09-26T12:00",
+    "mm": 9.5
+   },
+   {
+    "t": "2026-09-26T13:00",
+    "mm": 3.4
+   },
+   {
+    "t": "2026-09-26T14:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-26T15:00",
+    "mm": 1.1
+   },
+   {
+    "t": "2026-09-26T16:00",
+    "mm": 3.3
+   },
+   {
+    "t": "2026-09-26T17:00",
+    "mm": 4.5
+   },
+   {
+    "t": "2026-09-26T18:00",
+    "mm": 6.2
+   },
+   {
+    "t": "2026-09-26T19:00",
+    "mm": 3.7
+   },
+   {
+    "t": "2026-09-26T20:00",
+    "mm": 6.5
+   },
+   {
+    "t": "2026-09-26T21:00",
+    "mm": 9.1
+   },
+   {
+    "t": "2026-09-26T22:00",
+    "mm": 14.8
+   },
+   {
+    "t": "2026-09-26T23:00",
+    "mm": 22.8
+   },
+   {
+    "t": "2026-09-27T00:00",
+    "mm": 13.6
+   },
+   {
+    "t": "2026-09-27T01:00",
+    "mm": 17.2
+   },
+   {
+    "t": "2026-09-27T02:00",
+    "mm": 21.3
+   },
+   {
+    "t": "2026-09-27T03:00",
+    "mm": 11.7
+   },
+   {
+    "t": "2026-09-27T04:00",
+    "mm": 9.3
+   },
+   {
+    "t": "2026-09-27T05:00",
+    "mm": 10.1
+   },
+   {
+    "t": "2026-09-27T06:00",
+    "mm": 5.5
+   },
+   {
+    "t": "2026-09-27T07:00",
+    "mm": 4.8
+   },
+   {
+    "t": "2026-09-27T08:00",
+    "mm": 6.7
+   },
+   {
+    "t": "2026-09-27T09:00",
+    "mm": 5.7
+   },
+   {
+    "t": "2026-09-27T10:00",
+    "mm": 13.8
+   },
+   {
+    "t": "2026-09-27T11:00",
+    "mm": 10.8
+   },
+   {
+    "t": "2026-09-27T12:00",
+    "mm": 9.9
+   },
+   {
+    "t": "2026-09-27T13:00",
+    "mm": 8.5
+   },
+   {
+    "t": "2026-09-27T14:00",
+    "mm": 11.4
+   },
+   {
+    "t": "2026-09-27T15:00",
+    "mm": 1.5
+   },
+   {
+    "t": "2026-09-27T16:00",
+    "mm": 1.9
+   },
+   {
+    "t": "2026-09-27T17:00",
+    "mm": 1.6
+   },
+   {
+    "t": "2026-09-27T18:00",
+    "mm": 11.6
+   },
+   {
+    "t": "2026-09-27T19:00",
+    "mm": 5.2
+   },
+   {
+    "t": "2026-09-27T20:00",
+    "mm": 16.5
+   },
+   {
+    "t": "2026-09-27T21:00",
+    "mm": 20.3
+   },
+   {
+    "t": "2026-09-27T22:00",
+    "mm": 14.3
+   },
+   {
+    "t": "2026-09-27T23:00",
+    "mm": 8.9
+   },
+   {
+    "t": "2026-09-28T00:00",
+    "mm": 11.0
+   },
+   {
+    "t": "2026-09-28T01:00",
+    "mm": 10.0
+   },
+   {
+    "t": "2026-09-28T02:00",
+    "mm": 9.8
+   },
+   {
+    "t": "2026-09-28T03:00",
+    "mm": 9.1
+   },
+   {
+    "t": "2026-09-28T04:00",
+    "mm": 12.2
+   },
+   {
+    "t": "2026-09-28T05:00",
+    "mm": 12.2
+   },
+   {
+    "t": "2026-09-28T06:00",
+    "mm": 9.8
+   },
+   {
+    "t": "2026-09-28T07:00",
+    "mm": 6.1
+   },
+   {
+    "t": "2026-09-28T08:00",
+    "mm": 5.8
+   },
+   {
+    "t": "2026-09-28T09:00",
+    "mm": 4.2
+   },
+   {
+    "t": "2026-09-28T10:00",
+    "mm": 3.4
+   },
+   {
+    "t": "2026-09-28T11:00",
+    "mm": 3.8
+   },
+   {
+    "t": "2026-09-28T12:00",
+    "mm": 2.6
+   },
+   {
+    "t": "2026-09-28T13:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-28T14:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-28T15:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-28T16:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-28T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-28T18:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-28T19:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-28T20:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-28T21:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-28T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-28T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T00:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-29T01:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-29T02:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-09-29T03:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-29T04:00",
+    "mm": 0.5
+   },
+   {
+    "t": "2026-09-29T05:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-29T06:00",
+    "mm": 0.6
+   },
+   {
+    "t": "2026-09-29T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T08:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T09:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T10:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-09-29T11:00",
+    "mm": 1.1
+   },
+   {
+    "t": "2026-09-29T12:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-29T13:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-29T14:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T15:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T18:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T19:00",
+    "mm": 0.7
+   },
+   {
+    "t": "2026-09-29T20:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-09-29T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-29T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T00:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T01:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T02:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T03:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T04:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T05:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T06:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T08:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T09:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T10:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T11:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T12:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T13:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-09-30T14:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T15:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T18:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T19:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T20:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-09-30T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T00:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T01:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T02:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T03:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T04:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T05:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T06:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T08:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T09:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T10:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T11:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-10-01T12:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T13:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T14:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T15:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T18:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T19:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T20:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-01T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T00:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T01:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T02:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T03:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T04:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T05:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T06:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T08:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T09:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T10:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T11:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T12:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T13:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T14:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T15:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T16:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T17:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T18:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T19:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T20:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-02T23:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T00:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T01:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T02:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T03:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T04:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T05:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T06:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T07:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T08:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-10-03T09:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-10-03T10:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-10-03T11:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-10-03T12:00",
+    "mm": 0.1
+   },
+   {
+    "t": "2026-10-03T13:00",
+    "mm": 0.4
+   },
+   {
+    "t": "2026-10-03T14:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-10-03T15:00",
+    "mm": 2.4
+   },
+   {
+    "t": "2026-10-03T16:00",
+    "mm": 0.3
+   },
+   {
+    "t": "2026-10-03T17:00",
+    "mm": 1.5
+   },
+   {
+    "t": "2026-10-03T18:00",
+    "mm": 0.2
+   },
+   {
+    "t": "2026-10-03T19:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T20:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T21:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T22:00",
+    "mm": 0.0
+   },
+   {
+    "t": "2026-10-03T23:00",
+    "mm": 0.0
+   }
+  ],
+  "source": "Open-Meteo historical weather API (ERA5 / ECMWF IFS reanalysis-model blend), daily sums, Asia/Yangon"
+ }
+}

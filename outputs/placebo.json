@@ -1,0 +1,151 @@
+{
+ "event_km2": 24.1,
+ "placebo_km2": 0.0,
+ "valid_land_km2": 770.3,
+ "calibration_placebo_km2": 2.531,
+ "max_fa_ratio": 0.2,
+ "placebo_period": {
+  "pre": [
+   "20260609",
+   "20260621",
+   "20260628",
+   "20260710",
+   "20260722",
+   "20260803"
+  ],
+  "post": [
+   "20260815"
+  ],
+  "bands": [
+   "pre_vv",
+   "pre_vh",
+   "std_vv",
+   "std_vh",
+   "post_vv",
+   "post_vh",
+   "d_vv",
+   "d_vh",
+   "z_vv",
+   "z_vh",
+   "dl_vv",
+   "dl_vh",
+   "d_cr",
+   "d_vv_m3",
+   "d_vh_m3",
+   "d_vv_m7",
+   "d_vh_m7",
+   "d_vv_m51",
+   "d_vh_m51"
+  ]
+ },
+ "calibration_period": {
+  "pre": [
+   "20260609",
+   "20260621",
+   "20260628",
+   "20260710",
+   "20260722",
+   "20260803",
+   "20260815",
+   "20260827",
+   "20260908"
+  ],
+  "post": [
+   "20260920"
+  ],
+  "bands": [
+   "pre_vv",
+   "pre_vh",
+   "std_vv",
+   "std_vh",
+   "post_vv",
+   "post_vh",
+   "d_vv",
+   "d_vh",
+   "z_vv",
+   "z_vh",
+   "dl_vv",
+   "dl_vh",
+   "d_cr",
+   "d_vv_m3",
+   "d_vh_m3",
+   "d_vv_m7",
+   "d_vh_m7",
+   "d_vv_m51",
+   "d_vh_m51"
+  ]
+ },
+ "training_negative_periods": [
+  {
+   "pre": [
+    "20260609",
+    "20260621",
+    "20260628",
+    "20260710",
+    "20260722",
+    "20260803",
+    "20260815"
+   ],
+   "post": [
+    "20260827"
+   ],
+   "bands": [
+    "pre_vv",
+    "pre_vh",
+    "std_vv",
+    "std_vh",
+    "post_vv",
+    "post_vh",
+    "d_vv",
+    "d_vh",
+    "z_vv",
+    "z_vh",
+    "dl_vv",
+    "dl_vh",
+    "d_cr",
+    "d_vv_m3",
+    "d_vh_m3",
+    "d_vv_m7",
+    "d_vh_m7",
+    "d_vv_m51",
+    "d_vh_m51"
+   ]
+  },
+  {
+   "pre": [
+    "20260609",
+    "20260621",
+    "20260628",
+    "20260710",
+    "20260722",
+    "20260803",
+    "20260815",
+    "20260827"
+   ],
+   "post": [
+    "20260908"
+   ],
+   "bands": [
+    "pre_vv",
+    "pre_vh",
+    "std_vv",
+    "std_vh",
+    "post_vv",
+    "post_vh",
+    "d_vv",
+    "d_vh",
+    "z_vv",
+    "z_vh",
+    "dl_vv",
+    "dl_vh",
+    "d_cr",
+    "d_vv_m3",
+    "d_vh_m3",
+    "d_vv_m7",
+    "d_vh_m7",
+    "d_vv_m51",
+    "d_vh_m51"
+   ]
+  }
+ ]
+}

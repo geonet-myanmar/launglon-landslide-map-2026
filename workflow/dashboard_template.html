@@ -1,0 +1,668 @@
+<title>Launglon Landslide Map 2026</title>
+<meta name="description" content="Sentinel-1 landslide mapping for Launglon Township after the 26-29 September 2026 rainfall">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Myanmar:wght@400;600&display=swap">
+<style>
+/*__LEAFLET_CSS__*/
+</style>
+<style>
+/* Layout: field-report dashboard. Header strip, KPI row, map with a side console, then analysis panels in a two-column grid. */
+:root {
+  --bg: #eef1ee;
+  --panel: #fbfcfb;
+  --panel-2: #f3f6f3;
+  --ink: #131a16;
+  --ink-2: #46514b;
+  --muted: #76817b;
+  --line: #d9dfda;
+  --line-2: #c4ccc6;
+  --accent: #1d6a83;
+  --accent-wash: rgba(29,106,131,.10);
+  --slide-hi: #a8231c;
+  --slide-md: #db4b33;
+  --slide-lo: #f0a48a;
+  --drone: #1d6a83;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+  --rain: #3987e5;
+  --grid: #e3e8e4;
+  --ok: #0ca30c; --warn: #fab219; --bad: #d03b3b;
+  --map-bg: #cdd9df;
+  --f-ui: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --f-mm: "Noto Sans Myanmar", "Myanmar Text", "Padauk", sans-serif;
+  --r: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1311; --panel: #171c19; --panel-2: #1d231f; --ink: #edf2ee; --ink-2: #b9c3bd; --muted: #87918b;
+  --line: #2a312d; --line-2: #39423d; --accent: #5fb2cf; --accent-wash: rgba(95,178,207,.14);
+  --slide-hi: #ff6b5a; --slide-md: #f08a63; --slide-lo: #b4614b; --drone: #5fb2cf;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --rain: #5598e7; --grid: #242a26; --map-bg: #1b2328; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f1311; --panel: #171c19; --panel-2: #1d231f; --ink: #edf2ee; --ink-2: #b9c3bd; --muted: #87918b;
+  --line: #2a312d; --line-2: #39423d; --accent: #5fb2cf; --accent-wash: rgba(95,178,207,.14);
+  --slide-hi: #ff6b5a; --slide-md: #f08a63; --slide-lo: #b4614b; --drone: #5fb2cf;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --rain: #5598e7; --grid: #242a26; --map-bg: #1b2328; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--f-ui); }
+.ll { padding-inline: 16px; padding-block: 0 40px; max-width: 1560px; margin: 0 auto; }
+.mm { font-family: var(--f-mm); }
+.num { font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* header */
+.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding-block: 20px 14px; border-bottom: 1px solid var(--line); }
+.top h1 { font-size: 24px; font-weight: 700; letter-spacing: -.01em; }
+.top h1 .mm { font-weight: 600; font-size: 19px; color: var(--ink-2); margin-left: 6px; }
+.eyebrow { font: 500 11px/1.2 var(--f-data); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 11.5px/1 var(--f-data); padding: 6px 8px; border: 1px solid var(--line-2); border-radius: 999px; color: var(--ink-2); background: var(--panel); white-space: nowrap; }
+
+/* KPI row */
+.kpis { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-block: 16px; }
+.kpi { background: var(--panel); padding: 12px 14px 13px; min-width: 0; }
+.kpi .lab { font-size: 12px; color: var(--ink-2); }
+.kpi .val { font-size: 26px; font-weight: 700; letter-spacing: -.02em; margin-top: 2px; }
+.kpi .val small { font-size: 13px; font-weight: 500; color: var(--ink-2); letter-spacing: 0; margin-left: 3px; }
+.kpi .sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.kpi.hero .val { color: var(--slide-hi); }
+@media (max-width: 1100px) { .kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* map + console */
+.mapwrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 12px; }
+#map { height: min(78vh, 820px); min-height: 460px; border-radius: var(--r); border: 1px solid var(--line-2); background: var(--map-bg); }
+.console { display: flex; flex-direction: column; gap: 12px; min-width: 0; max-height: min(78vh, 820px); }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; min-width: 0; }
+.box h3 { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 8px; }
+.layers { overflow: auto; }
+.lyr { display: grid; grid-template-columns: 18px 14px 1fr; align-items: center; gap: 8px; padding: 3px 0; cursor: pointer; font-size: 13px; }
+.lyr input { margin: 0; accent-color: var(--accent); }
+.sw { width: 14px; height: 10px; border-radius: 2px; }
+.sw.line { height: 3px; }
+.sw.dot { width: 9px; height: 9px; border-radius: 50%; margin-left: 2px; }
+.grp { font: 500 10.5px/1 var(--f-data); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 10px 0 4px; }
+.grp:first-of-type { margin-top: 0; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--line-2); border-radius: 5px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 4px 9px; font-size: 12px; cursor: pointer; color: var(--ink-2); }
+.seg button + button { border-left: 1px solid var(--line-2); }
+.seg button[aria-pressed="true"] { background: var(--accent-wash); color: var(--ink); font-weight: 600; }
+input[type=range] { accent-color: var(--accent); width: 100%; }
+.legend-ramp { height: 8px; border-radius: 2px; margin: 4px 0 2px; }
+.ticks { display: flex; justify-content: space-between; font: 10.5px var(--f-data); color: var(--muted); }
+.detail { overflow: auto; flex: 1 1 auto; min-height: 140px; }
+.detail dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0; font-size: 12.5px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; font-family: var(--f-data); font-variant-numeric: tabular-nums; text-align: right; }
+.empty { color: var(--muted); font-size: 12.5px; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font: 600 11px/1 var(--f-ui); padding: 4px 7px; border-radius: 999px; border: 1px solid var(--line-2); }
+.pill i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+@media (max-width: 980px) { .mapwrap { grid-template-columns: minmax(0,1fr); } .console { max-height: none; } #map { height: 64vh; } }
+
+/* panels */
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.grid2 > .wide { grid-column: 1 / -1; }
+@media (max-width: 980px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px 18px; min-width: 0; }
+.panel h2 { font-size: 17px; font-weight: 700; letter-spacing: -.005em; }
+.panel .lede { color: var(--ink-2); margin: 4px 0 12px; max-width: 75ch; font-size: 13.5px; }
+.chart { width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--muted); font: 11px var(--f-data); }
+.chart .axis path, .chart .axis line { stroke: var(--line-2); }
+.chart .gridl line { stroke: var(--grid); }
+.chart .gridl path { display: none; }
+.chart .lbl { fill: var(--ink-2); font: 500 11px var(--f-ui); }
+.chart .lbl-strong { fill: var(--ink); font: 600 11.5px var(--f-ui); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--ink-2); margin-bottom: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 12px; height: 4px; border-radius: 2px; display: inline-block; }
+.legend i.sq { height: 10px; width: 10px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 6px 0 12px; }
+.stat { border-left: 2px solid var(--line-2); padding-left: 10px; }
+.stat .v { font-size: 20px; font-weight: 700; }
+.stat .k { font-size: 12px; color: var(--ink-2); }
+.tablewrap { overflow-x: auto; max-height: 420px; overflow-y: auto; border: 1px solid var(--line); border-radius: 4px; }
+table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+th, td { padding: 6px 9px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { position: sticky; top: 0; background: var(--panel-2); font-weight: 600; color: var(--ink-2); font-size: 11.5px; z-index: 1; }
+td.n, th.n { text-align: right; font-family: var(--f-data); font-variant-numeric: tabular-nums; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--accent-wash); }
+.bar-cell { position: relative; }
+.bar-cell b { position: absolute; left: 0; top: 50%; height: 6px; margin-top: -3px; background: var(--slide-md); border-radius: 0 3px 3px 0; opacity: .35; }
+.bar-cell span { position: relative; }
+.fr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 18px; }
+.fr-grid h4 { margin: 0 0 2px; font-size: 12.5px; font-weight: 600; }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; }
+.steps li::before { content: counter(s, decimal-leading-zero); font: 500 12px/1.6 var(--f-data); color: var(--accent); }
+.steps b { font-weight: 600; }
+.steps p { margin: 2px 0 0; color: var(--ink-2); font-size: 13px; }
+.src { columns: 2 280px; column-gap: 24px; font-size: 12.5px; color: var(--ink-2); padding-left: 18px; margin: 0; }
+.src li { break-inside: avoid; margin-bottom: 5px; }
+.note { font-size: 12.5px; color: var(--ink-2); background: var(--panel-2); border-radius: 4px; padding: 10px 12px; margin-top: 10px; }
+#tip { position: fixed; pointer-events: none; z-index: 2000; background: var(--panel); color: var(--ink); border: 1px solid var(--line-2); border-radius: 5px; padding: 7px 9px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); max-width: 260px; }
+#tip b { font-weight: 600; }
+#tip .num { font-size: 11.5px; }
+.leaflet-container { font: 12px var(--f-ui); background: var(--map-bg); }
+.leaflet-tooltip { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
+.leaflet-bar a { background: var(--panel); color: var(--ink); border-bottom-color: var(--line); }
+.leaflet-control-attribution { background: color-mix(in srgb, var(--panel) 80%, transparent) !important; color: var(--ink-2); }
+.leaflet-control-attribution a { color: var(--accent); }
+.leaflet-control-scale-line { background: color-mix(in srgb, var(--panel) 75%, transparent); color: var(--ink); border-color: var(--ink-2); }
+.foot { margin-top: 18px; font-size: 12px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="ll">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Tanintharyi · Dawei District · MMR006002</div>
+      <h1>Launglon Landslide Map 2026 <span class="mm">လောင်းလုံး</span></h1>
+    </div>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Key figures"></section>
+
+  <section class="mapwrap">
+    <div id="map" role="region" aria-label="Landslide map"></div>
+    <aside class="console">
+      <div class="box layers" id="layers">
+        <h3>Map layers</h3>
+      </div>
+      <div class="box detail" id="detail" aria-live="polite">
+        <h3>Selection</h3>
+        <p class="empty">Click a landslide, a village or a village tract on the map.</p>
+      </div>
+    </aside>
+  </section>
+
+  <div class="grid2">
+    <section class="panel wide" id="p-valid">
+      <h2>How well the map matches the drone surveys</h2>
+      <p class="lede" id="valid-lede"></p>
+      <div class="stats" id="valid-stats"></div>
+      <div class="grid2" style="margin-top:0">
+        <div>
+          <div class="legend" id="method-legend"></div>
+          <div class="chart" id="c-methods"></div>
+        </div>
+        <div>
+          <div class="tablewrap" style="max-height:330px"><table id="t-sites"></table></div>
+        </div>
+      </div>
+      <div class="note" id="placebo-note"></div>
+    </section>
+
+    <section class="panel" id="p-ts">
+      <h2>What the radar saw</h2>
+      <p class="lede">Mean terrain-flattened backscatter over the drone-mapped landslides and over stable ground in the same surveys, every pass of ascending track 70. The drop on 2 October is the landslide signal.</p>
+      <div class="row" style="justify-content:space-between;margin-bottom:6px">
+        <div class="legend" id="ts-legend" style="margin:0"></div>
+        <div class="seg" id="ts-pol"><button aria-pressed="true" data-p="vh">VH</button><button aria-pressed="false" data-p="vv">VV</button></div>
+      </div>
+      <div class="chart" id="c-ts"></div>
+    </section>
+
+    <section class="panel" id="p-rain">
+      <h2>The rain that triggered it</h2>
+      <p class="lede" id="rain-lede"></p>
+      <div class="chart" id="c-rain"></div>
+      <div class="chart" id="c-rainyr" style="margin-top:12px"></div>
+    </section>
+
+    <section class="panel" id="p-vt">
+      <h2>Village tracts</h2>
+      <p class="lede">Mapped landslide area by MIMU village tract. Click a row to zoom the map.</p>
+      <div class="tablewrap"><table id="t-vt"></table></div>
+    </section>
+
+    <section class="panel" id="p-exp">
+      <h2>Villages closest to landslides</h2>
+      <p class="lede" id="exp-lede"></p>
+      <div class="tablewrap"><table id="t-vill"></table></div>
+    </section>
+
+    <section class="panel wide" id="p-fr">
+      <h2>Where the landslides happened</h2>
+      <p class="lede">Frequency ratio of mapped landslide ground in each class: 1.0 means as common as across the township, 2.0 twice as common. Bars show the ratio; the hover shows area.</p>
+      <div class="fr-grid" id="fr"></div>
+    </section>
+
+    <section class="panel" id="p-size">
+      <h2>Landslide sizes</h2>
+      <p class="lede">Number of mapped landslides by area. The smallest class is set by the 0.2 ha minimum mapping unit.</p>
+      <div class="chart" id="c-size"></div>
+    </section>
+
+    <section class="panel" id="p-opt">
+      <h2>Optical cross-check</h2>
+      <p class="lede" id="opt-lede"></p>
+      <div class="legend" id="opt-legend"></div>
+      <div class="chart" id="c-opt"></div>
+    </section>
+
+    <section class="panel wide" id="p-method">
+      <h2>Workflow</h2>
+      <p class="lede">The previous script searched CDSE with a hard-coded box that missed the western part of the township, downloaded up to ten full GRD scenes from mixed tracks and orbit directions, and stopped there. The new workflow keeps the native 10 m grid from download to map.</p>
+      <ol class="steps" id="steps"></ol>
+      <h3 style="font-size:14px;margin:18px 0 8px">Data sources</h3>
+      <ul class="src">
+        <li>Sentinel-1 IW GRDH, gamma0 RTC via CDSE Sentinel Hub (Copernicus DEM GLO-30 terrain flattening)</li>
+        <li>Sentinel-2 L2A via CDSE Sentinel Hub (Jan–Mar 2026 median NDVI; post-event 30 Sep / 5 Oct)</li>
+        <li>MIMU GeoNode: township, village tracts, villages, roads, rivers, schools, health facilities</li>
+        <li>Copernicus DEM GLO-30 and ESA WorldCover 2021 v200 (AWS open data)</li>
+        <li>OpenStreetMap (Overpass): buildings, roads, waterways</li>
+        <li>Open-Meteo historical weather API: daily rainfall 1991–2026</li>
+        <li>geonet-myanmar/launglon-landslides-2026: ten post-event drone inventories (2–8 Oct 2026), used for training and testing only</li>
+      </ul>
+      <div class="note"><b>Limits.</b> One post-event pass (2 Oct, ascending) exists so far; no descending pass has been acquired since the event. Slopes facing away from the radar (east-facing, steep) are seen at grazing angles and are mapped less reliably. Landslides smaller than 0.2 ha are mostly missed, and runout on paddy can be confused with flooding. The map ranks where to look; it does not replace a field check.</div>
+    </section>
+  </div>
+  <p class="foot" id="foot"></p>
+</div>
+<div id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const D = /*__DATA__*/null;
+const A = D.analysis, V = D.validation;
+const $ = (s, el = document) => el.querySelector(s);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = (v, d = 0) => v == null || isNaN(v) ? "–" : Number(v).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (v, d = 0) => v == null ? "–" : fmt(v * 100, d) + "%";
+const el = (tag, attrs = {}, kids = []) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "text") e.textContent = v; else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); } for (const c of [].concat(kids)) if (c) e.append(c); return e; };
+const METHODS = { M0: { name: "M0 classic pair", desc: "single pre/post pair, ±3 dB", c: "--s3" }, M1: { name: "M1 multi-temporal anomaly", desc: "unsupervised", c: "--s2" }, M2: { name: "M2 trained classifier", desc: "this map", c: "--s1" } };
+const CONF = { high: "--slide-hi", medium: "--slide-md", low: "--slide-lo" };
+
+/* ---------- tooltip ---------- */
+const tip = $("#tip");
+function showTip(ev, html) { tip.innerHTML = html; tip.hidden = false; const w = tip.offsetWidth, h = tip.offsetHeight; let x = ev.clientX + 14, y = ev.clientY + 14; if (x + w > innerWidth - 8) x = ev.clientX - w - 14; if (y + h > innerHeight - 8) y = ev.clientY - h - 14; tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px"; }
+function hideTip() { tip.hidden = true; }
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+/* ---------- header + KPIs ---------- */
+(function header() {
+  const s = D.s1.ASC070, ex = A.exposure, R = A.rain;
+  const m = $("#meta");
+  [["Event", "26–29 Sep 2026"], ["Sentinel-1", `ASC 70 · ${s.pre.length} pre + ${s.post.length} post`], ["Grid", "10 m · UTM 47N"], ["Post-event pass", s.post.join(", ")]]
+    .forEach(([k, v]) => m.append(el("span", { class: "chip", text: `${k}  ${v}` })));
+  const k = $("#kpis");
+  const tiles = [
+    { cls: "hero", lab: "Landslides mapped", val: fmt(A.n_landslides), sub: `${fmt(A.area_ha, 0)} ha of ground` },
+    { lab: "High confidence", val: fmt(A.confidence.high || 0), sub: `${fmt(A.confidence.medium || 0)} medium · ${fmt(A.confidence.low || 0)} low` },
+    { lab: "Villages within 500 m", val: fmt(ex.villages_within_500m), sub: `of ${ex.villages_total} MIMU villages` },
+    { lab: "Buildings inside or within 50 m", val: fmt(ex.buildings_within_50m), sub: `${fmt(ex.buildings_inside)} inside a mapped landslide` },
+    { lab: "Road length crossed", val: fmt(Object.values(ex.road_m_inside).reduce((a, b) => a + b, 0) / 1000, 1), unit: "km", sub: `${fmt(ex.road_crossings)} landslides cross a road` },
+    { lab: "Peak 3-day rainfall", val: fmt(R.event_max3_mm), unit: "mm", sub: `rank ${R.rank3} of ${R.years + 1} years at Ka Det Nge Htein` },
+  ];
+  for (const t of tiles) k.append(el("div", { class: "kpi " + (t.cls || "") }, [el("div", { class: "lab", text: t.lab }), el("div", { class: "val", html: esc(t.val) + (t.unit ? `<small>${t.unit}</small>` : "") }), el("div", { class: "sub", text: t.sub })]));
+})();
+
+/* ---------- map ---------- */
+const map = L.map("map", { preferCanvas: true, zoomSnap: 0.5, minZoom: 9, maxZoom: 18, attributionControl: true });
+const B = L.latLngBounds(D.bounds);
+map.fitBounds(L.geoJSON(D.vec.township).getBounds(), { padding: [10, 10] });
+map.setMaxBounds(B.pad(0.6));
+L.control.scale({ imperial: false }).addTo(map);
+map.attributionControl.setPrefix(false).addAttribution("Contains modified Copernicus Sentinel data 2026 · MIMU · © OpenStreetMap contributors · ESA WorldCover · drone inventory: geonet-myanmar");
+const renderer = L.canvas({ padding: 0.3 });
+const ov = f => "overlays/" + f;
+const bases = {
+  hill: L.imageOverlay(ov("hillshade.webp"), B, { opacity: 1, zIndex: 1 }),
+  s2: L.imageOverlay(ov("s2_post.webp"), B, { opacity: 1, zIndex: 2 }),
+  sar: L.imageOverlay(ov("s1_rgb.webp"), B, { opacity: 1, zIndex: 2 }),
+  osm: L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19, attribution: "© OpenStreetMap" }),
+  esri: L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Esri World Imagery" }),
+};
+bases.hill.addTo(map);
+const rasters = {
+  prob: L.imageOverlay(ov("probability.webp"), B, { opacity: .85, zIndex: 5 }),
+  change: L.imageOverlay(ov("s1_change.webp"), B, { opacity: .85, zIndex: 5 }),
+  density: L.imageOverlay(ov("density.webp"), B, { opacity: .8, zIndex: 5 }),
+  placebo: L.imageOverlay(ov("placebo.webp"), B, { opacity: 1, zIndex: 6 }),
+};
+map.createPane("vt"); map.getPane("vt").style.zIndex = 410;
+map.createPane("ls"); map.getPane("ls").style.zIndex = 430;
+map.createPane("pts"); map.getPane("pts").style.zIndex = 450;
+
+let selected = null;
+const vtLayer = L.geoJSON(D.vec.vtracts, { pane: "vt", renderer, style: () => ({ color: css("--ink-2"), weight: 1, opacity: .55, fill: true, fillOpacity: 0, dashArray: null }),
+  onEachFeature: (f, l) => l.on("click", e => { L.DomEvent.stopPropagation(e); showVT(f.properties.VT_PCODE); }) });
+const townLayer = L.geoJSON(D.vec.township, { pane: "vt", interactive: false, style: () => ({ color: css("--ink"), weight: 2, opacity: .8, fill: false }) });
+const surveyLayer = L.geoJSON(D.vec.survey, { pane: "vt", interactive: false, style: () => ({ color: css("--drone"), weight: 1.5, dashArray: "4 3", fill: false }) });
+const droneLayer = L.geoJSON(D.vec.drone, { pane: "ls", renderer, style: () => ({ color: css("--drone"), weight: 1.6, fillColor: css("--drone"), fillOpacity: .12 }),
+  onEachFeature: (f, l) => { l.bindTooltip(`${esc(f.properties.site)} · ${esc(f.properties.id)}`, { sticky: true }); l.on("click", e => { L.DomEvent.stopPropagation(e); showDrone(f.properties); }); } });
+const roadLayer = L.geoJSON(D.vec.roads, { pane: "vt", interactive: false, style: f => ({ color: css("--ink-2"), weight: f.properties.source === "MIMU" ? 2.2 : 1, opacity: .7 }) });
+
+let confOn = { high: true, medium: true, low: true }, minArea = 0;
+const lsLayer = L.geoJSON(D.vec.landslides, { pane: "ls", renderer,
+  filter: () => true,
+  style: f => lsStyle(f),
+  onEachFeature: (f, l) => { l.on("click", e => { L.DomEvent.stopPropagation(e); showLS(f.properties, l); }); l.on("mouseover", () => l.setStyle({ weight: 2.2 })); l.on("mouseout", () => l.setStyle(lsStyle(f))); } });
+function lsStyle(f) { const p = f.properties, on = confOn[p.confidence] && p.area_ha >= minArea; const c = css(CONF[p.confidence]); return { color: c, weight: on ? 1.1 : 0, opacity: on ? 1 : 0, fillColor: c, fillOpacity: on ? .55 : 0, interactive: on }; }
+function restyleLS() { lsLayer.eachLayer(l => l.setStyle(lsStyle(l.feature))); }
+const pt = (latlng, c, r) => L.circleMarker(latlng, { pane: "pts", renderer, radius: r, color: css("--panel"), weight: 1.5, fillColor: c, fillOpacity: 1 });
+const villLayer = L.geoJSON(D.vec.villages, { pointToLayer: (f, ll) => pt(ll, css("--ink"), 4), onEachFeature: (f, l) => { l.bindTooltip(`${esc(f.properties.VILLAGE)}`, { direction: "top" }); l.on("click", e => { L.DomEvent.stopPropagation(e); showVillage(f.properties.VLG_PCODE); }); } });
+const facLayer = L.layerGroup([
+  L.geoJSON(D.vec.schools, { pointToLayer: (f, ll) => pt(ll, css("--s2"), 3.5), onEachFeature: (f, l) => l.bindTooltip("School · " + esc(f.properties.name)) }),
+  L.geoJSON(D.vec.health, { pointToLayer: (f, ll) => pt(ll, css("--s3"), 5), onEachFeature: (f, l) => l.bindTooltip("Health · " + esc(f.properties.name)) })]);
+[townLayer, vtLayer, surveyLayer, droneLayer, lsLayer, villLayer].forEach(l => l.addTo(map));
+map.on("click", () => clearSel());
+
+/* layer console */
+(function console_() {
+  const box = $("#layers");
+  const basesDef = [["hill", "Hillshade (Copernicus DEM)"], ["s2", "Sentinel-2 true colour, 30 Sep / 5 Oct"], ["sar", "SAR composite (R pre VH · G/B post VH)"], ["osm", "OpenStreetMap (online)"], ["esri", "Esri imagery (online)"]];
+  box.append(el("div", { class: "grp", text: "Background" }));
+  const sel = el("select", { id: "basesel", "aria-label": "Background map", style: "width:100%;padding:4px 6px;border:1px solid var(--line-2);border-radius:4px;background:var(--panel)" });
+  basesDef.forEach(([k, n]) => sel.append(el("option", { value: k, text: n })));
+  sel.addEventListener("change", () => { Object.values(bases).forEach(b => map.removeLayer(b)); if (sel.value !== "hill") bases.hill.addTo(map); bases[sel.value].addTo(map); if (sel.value === "osm" || sel.value === "esri") bases.hill.bringToBack(); });
+  box.append(sel);
+  const lyr = (id, label, sw, layer, on) => { const cb = el("input", { type: "checkbox", id }); cb.checked = !!on; cb.addEventListener("change", () => cb.checked ? layer.addTo(map) : map.removeLayer(layer)); const lab = el("label", { class: "lyr", for: id }, [cb, sw, el("span", { text: label })]); box.append(lab); return cb; };
+  const sw = (cls, style) => el("span", { class: "sw " + cls, style });
+  box.append(el("div", { class: "grp", text: "Sentinel-1 results" }));
+  lyr("l-ls", "Mapped landslides", sw("", `background:${css("--slide-md")}`), lsLayer, true);
+  const conf = el("div", { class: "row", style: "margin:4px 0 4px 26px" });
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Confidence" });
+  ["high", "medium", "low"].forEach(c => { const b = el("button", { "aria-pressed": "true", type: "button", html: `<span class="pill" style="border:0;padding:0"><i style="background:var(${CONF[c]})"></i>${c}</span>` }); b.addEventListener("click", () => { confOn[c] = !confOn[c]; b.setAttribute("aria-pressed", confOn[c]); restyleLS(); }); seg.append(b); });
+  conf.append(seg); box.append(conf);
+  const ar = el("div", { style: "margin:2px 0 6px 26px;font-size:12px;color:var(--ink-2)" });
+  const arl = el("label", { for: "minarea", text: "Minimum area: 0.2 ha" });
+  const rng = el("input", { type: "range", id: "minarea", min: "0", max: "2", step: "0.1", value: "0" });
+  rng.addEventListener("input", () => { minArea = +rng.value; arl.textContent = `Minimum area: ${minArea <= 0.2 ? "0.2" : minArea.toFixed(1)} ha`; restyleLS(); });
+  ar.append(arl, rng); box.append(ar);
+  lyr("l-prob", "Landslide probability ≥ 30 %", sw("", "background:linear-gradient(90deg,#fddb8a,#f79748,#db482e,#800f26)"), rasters.prob, false);
+  lyr("l-chg", "Backscatter change (VV+VH, dB)", sw("", "background:linear-gradient(90deg,#961e1e,#f0a08c,#f0f0ec,#96bee6,#193c82)"), rasters.change, false);
+  lyr("l-den", "Landslide density (300 m kernel)", sw("", "background:linear-gradient(90deg,#ffeda0,#feb24c,#f03b20,#800026)"), rasters.density, false);
+  lyr("l-plc", "Placebo detections (no-event test)", sw("", "background:#783cc8"), rasters.placebo, false);
+  box.append(el("div", { class: "grp", text: "Reference" }));
+  lyr("l-drone", "Drone-mapped landslides (2–8 Oct)", sw("", `background:transparent;border:1.6px solid ${css("--drone")}`), droneLayer, true);
+  lyr("l-survey", "Drone survey extents", sw("line", `background:${css("--drone")}`), surveyLayer, true);
+  box.append(el("div", { class: "grp", text: "MIMU / OSM" }));
+  lyr("l-vt", "Village tracts", sw("line", `background:${css("--ink-2")}`), vtLayer, true);
+  lyr("l-vill", "Villages", sw("dot", `background:${css("--ink")}`), villLayer, true);
+  lyr("l-road", "Roads", sw("line", `background:${css("--ink-2")}`), roadLayer, false);
+  lyr("l-fac", "Schools and health facilities", sw("dot", `background:${css("--s2")}`), facLayer, false);
+  const op = el("div", { style: "margin-top:10px;font-size:12px;color:var(--ink-2)" });
+  const opl = el("label", { for: "opac", text: "Raster overlay opacity" });
+  const opr = el("input", { type: "range", id: "opac", min: "0.2", max: "1", step: "0.05", value: "0.85" });
+  opr.addEventListener("input", () => Object.values(rasters).forEach(r => r.setOpacity(+opr.value)));
+  op.append(opl, opr); box.append(op);
+})();
+
+/* selection panel */
+const det = $("#detail");
+let hl = null;
+function setDetail(title, sub, rows, extra) {
+  det.innerHTML = "";
+  det.append(el("h3", { text: "Selection" }), el("div", { style: "font-weight:700;font-size:15px", text: title }));
+  if (sub) det.append(el("div", { style: "color:var(--ink-2);font-size:12.5px;margin-bottom:8px", html: sub }));
+  const dl = el("dl");
+  for (const [k, v] of rows) { dl.append(el("dt", { text: k }), el("dd", { text: v })); }
+  det.append(dl);
+  if (extra) det.append(extra);
+}
+function clearSel() { if (hl) { map.removeLayer(hl); hl = null; } det.innerHTML = '<h3>Selection</h3><p class="empty">Click a landslide, a village or a village tract on the map.</p>'; }
+function highlight(geo) { if (hl) map.removeLayer(hl); hl = L.geoJSON(geo, { pane: "pts", interactive: false, style: { color: css("--accent"), weight: 3, fill: false } }).addTo(map); }
+function showLS(p, layer) {
+  highlight(layer.feature);
+  const opt = { supported: "NDVI dropped (supported)", "not seen": "clear sky, no NDVI drop", cloud: "cloud-covered" }[p.optical] || p.optical;
+  setDetail(`${p.id}`, `<span class="pill"><i style="background:var(${CONF[p.confidence]})"></i>${esc(p.confidence)} confidence</span>&nbsp; ${esc(p.VT || "")}`, [
+    ["Area", fmt(p.area_ha, 2) + " ha"], ["Mean probability", pct(p.prob_mean)], ["Slope mean / max", `${fmt(p.slope_mean, 0)}° / ${fmt(p.slope_max, 0)}°`],
+    ["Elevation", `${fmt(p.elev_min)}–${fmt(p.elev_max)} m`], ["Land cover (2021)", p.landcover], ["ΔVV / ΔVH", `${fmt(p.d_vv_mean, 1)} / ${fmt(p.d_vh_mean, 1)} dB`],
+    ["Sentinel-2", opt], ["ΔNDVI", p.s2_dndvi == null ? "–" : fmt(p.s2_dndvi, 2)]]);
+}
+function showDrone(p) { setDetail(`${p.id} · ${p.site}`, "Drone-mapped landslide (reference)", [["Name", p.name || "–"], ["Type", p.type || "–"], ["Area", fmt(p.area_m2 / 1e4, 2) + " ha"]]); }
+function showVillage(code) {
+  const f = D.vec.villages.features.find(x => x.properties.VLG_PCODE === code); if (!f) return;
+  const r = A.villages.find(x => x.pcode === code);
+  highlight({ type: "Feature", geometry: { type: "Point", coordinates: f.geometry.coordinates } });
+  map.setView([f.geometry.coordinates[1], f.geometry.coordinates[0]], Math.max(map.getZoom(), 14));
+  setDetail(f.properties.VILLAGE, `<span class="mm">${esc(f.properties.VLG_MMR || "")}</span> · ${esc(f.properties.VT || "")} village tract`, r ? [
+    ["Nearest mapped landslide", fmt(r.dist_m) + " m"], ["Landslide ground within 1 km", fmt(r.ls_ha_1km, 2) + " ha"], ["OSM buildings within 1 km", fmt(r.buildings_1km)], ["MIMU P-code", code]] : [["MIMU P-code", code], ["Mapped landslides within 1 km", "none in the top 40"]]);
+}
+function showVT(code) {
+  const f = D.vec.vtracts.features.find(x => x.properties.VT_PCODE === code); if (!f) return;
+  const r = A.village_tracts.find(x => x.VT_PCODE === code);
+  highlight(f); map.fitBounds(L.geoJSON(f).getBounds(), { padding: [30, 30] });
+  setDetail(f.properties.VT + " village tract", `<span class="mm">${esc(f.properties.VT_MMR || "")}</span> · ${esc(code)}`, [
+    ["Mapped landslides", fmt(r.landslides)], ["High confidence", fmt(r.high_conf)], ["Landslide ground", fmt(r.landslide_ha, 1) + " ha"],
+    ["Share of land", fmt(r.density_pct, 2) + " %"], ["Landslides per km²", fmt(r.per_km2, 2)], ["Land area", fmt(r.land_km2, 1) + " km²"]]);
+}
+
+/* ---------- chart helpers ---------- */
+function frame(sel, h, m) { const node = $(sel); node.innerHTML = ""; const w = Math.max(280, node.clientWidth || 600); const svg = d3.select(node).append("svg").attr("viewBox", `0 0 ${w} ${h}`).attr("width", "100%"); return { svg, w, h, iw: w - m.l - m.r, ih: h - m.t - m.b, g: svg.append("g").attr("transform", `translate(${m.l},${m.t})`) }; }
+function legend(sel, items) { const n = $(sel); n.innerHTML = ""; items.forEach(([lab, c, sq]) => n.append(el("span", {}, [el("i", { class: sq ? "sq" : "", style: `background:var(${c})` }), document.createTextNode(lab)]))); }
+const roundTop = (x, y, w, h, r) => { r = Math.min(r, w / 2, h); return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`; };
+const roundRight = (x, y, w, h, r) => { r = Math.min(r, h / 2, w); return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h - r}Q${x + w},${y + h} ${x + w - r},${y + h}H${x}Z`; };
+
+/* validation */
+function drawValidation() {
+  const P = V.pooled, m2 = P.M2;
+  const nSites = Object.keys(V.sites).length;
+  const totLs = Object.values(V.sites).reduce((a, s) => a + s.n_landslides, 0), totHa = Object.values(V.sites).reduce((a, s) => a + s.landslide_ha, 0), surv = Object.values(V.sites).reduce((a, s) => a + s.survey_ha, 0);
+  $("#valid-lede").textContent = `${nSites} drone surveys flown 2–8 October (${fmt(surv)} ha, ${totLs} landslides covering ${fmt(totHa)} ha) are the reference. Each site is mapped by a model trained on the other ${nSites - 1}, so every score below is for ground the model never saw. Threshold ${V.threshold} on probability and ${V.mmu_px * 100 / 10000} ha minimum mapping unit, both chosen on these held-out predictions.`;
+  const st = $("#valid-stats"); st.innerHTML = "";
+  [[pct(m2.precision), "of mapped pixels are drone-confirmed landslide"], [pct(m2.recall), "of drone landslide pixels are mapped"], [fmt(m2.f1, 2), "F1 score (M2)"], [`${m2.objects_hit} / ${m2.objects}`, "drone landslides touched"], [pct(m2.area_weighted_detection), "of drone landslide area belongs to a detected slide"]]
+    .forEach(([v, k]) => st.append(el("div", { class: "stat" }, [el("div", { class: "v", text: v }), el("div", { class: "k", text: k })])));
+  legend("#method-legend", Object.entries(METHODS).map(([k, m]) => [`${m.name} (${m.desc})`, m.c, true]));
+  const metrics = [["precision", "Precision"], ["recall", "Recall"], ["f1", "F1"], ["iou", "IoU"]];
+  const F = frame("#c-methods", 230, { t: 8, r: 40, b: 24, l: 76 });
+  const y0 = d3.scaleBand().domain(metrics.map(d => d[0])).range([0, F.ih]).paddingInner(.28);
+  const y1 = d3.scaleBand().domain(Object.keys(METHODS)).range([0, y0.bandwidth()]).paddingInner(.12);
+  const x = d3.scaleLinear().domain([0, 1]).range([0, F.iw]);
+  F.g.append("g").attr("class", "gridl").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x).ticks(5).tickSize(-F.ih).tickFormat(d3.format(".0%")));
+  F.g.selectAll(".gridl text").attr("dy", "1.2em");
+  for (const [k, lab] of metrics) {
+    const g = F.g.append("g").attr("transform", `translate(0,${y0(k)})`);
+    g.append("text").attr("class", "lbl").attr("x", -8).attr("y", y0.bandwidth() / 2).attr("dy", ".35em").attr("text-anchor", "end").text(lab);
+    for (const mk of Object.keys(METHODS)) {
+      const v = P[mk][k], bh = Math.min(y1.bandwidth(), 12);
+      const yy = y1(mk) + (y1.bandwidth() - bh) / 2;
+      g.append("path").attr("d", roundRight(0, yy, Math.max(x(v), 1), bh, 3)).attr("fill", css(METHODS[mk].c))
+        .on("mousemove", ev => showTip(ev, `<b>${METHODS[mk].name}</b><br>${lab}: <span class="num">${pct(v, 1)}</span>`)).on("mouseleave", hideTip);
+      g.append("text").attr("x", x(v) + 5).attr("y", yy + bh / 2).attr("dy", ".35em").text(pct(v));
+    }
+  }
+  // per-site table
+  const t = $("#t-sites"); t.innerHTML = "";
+  t.append(el("thead", {}, el("tr", {}, ["Site", "Drone landslides", "M2 precision", "M2 recall", "M2 F1", "M1 F1", "M0 F1", "AUC", "Hit"].map((h, i) => el("th", { class: i ? "n" : "", text: h })))));
+  const tb = el("tbody");
+  for (const [code, s] of Object.entries(V.sites)) {
+    const a = V.per_site.M2[code], b = V.per_site.M1[code], c = V.per_site.M0[code];
+    const tr = el("tr", {}, [el("td", { text: s.name }), el("td", { class: "n", text: `${s.n_landslides} · ${fmt(s.landslide_ha, 1)} ha` }), el("td", { class: "n", text: pct(a.precision) }), el("td", { class: "n", text: pct(a.recall) }),
+      el("td", { class: "n", text: fmt(a.f1, 2) }), el("td", { class: "n", text: fmt(b.f1, 2) }), el("td", { class: "n", text: fmt(c.f1, 2) }), el("td", { class: "n", text: fmt(V.per_site.M2._auc[code], 2) }), el("td", { class: "n", text: `${a.objects_hit}/${a.objects}` })]);
+    tr.addEventListener("click", () => { const f = D.vec.survey.features.filter(x => x.properties.site === s.name); if (f.length) { map.fitBounds(L.geoJSON({ type: "FeatureCollection", features: f }).getBounds(), { padding: [20, 20] }); document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" }); } });
+    tb.append(tr);
+  }
+  t.append(tb);
+  const pl = D.placebo;
+  const dd = t => `${t.slice(6, 8)} ${["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+t.slice(4, 6)]}`;
+  $("#placebo-note").innerHTML = pl ? `<b>Placebo tests.</b> The frozen model was run on pairs with no known event, each one pass against the passes before it. ` +
+    `On ${dd(pl.calibration_period.post[0])} it flagged <span class="num">${fmt(pl.calibration_placebo_km2, 2)} km²</span> against <span class="num">${fmt(pl.event_km2, 2)} km²</span> for 2 October, so roughly ${fmt(pl.calibration_placebo_km2 / pl.event_km2 * 100, 0)} % of the event map may be background change; this pair was used to set the threshold (false-alarm area at most ${fmt(pl.max_fa_ratio * 100, 0)} % of the event area). ` +
+    `On ${dd(pl.placebo_period.post[0])}, which played no part in any choice, it flagged <span class="num">${fmt(pl.placebo_km2, 2)} km²</span>. ` +
+    `The model also learned from two other no-event pairs (${pl.training_negative_periods.map(x => dd(x.post[0])).join(", ")}), which is what keeps ordinary monsoon change off the map.` : "";
+}
+
+/* S1 time series */
+let tsPol = "vh";
+function drawTS() {
+  const rows = A.s1_timeseries.map(r => ({ ...r, d: new Date(r.date) }));
+  legend("#ts-legend", [["Drone-mapped landslides", "--slide-md"], ["Stable ground, same surveys", "--muted"]]);
+  const F = frame("#c-ts", 250, { t: 14, r: 64, b: 26, l: 40 });
+  const x = d3.scaleTime().domain([d3.timeDay.offset(rows[0].d, -4), d3.timeDay.offset(rows[rows.length - 1].d, 6)]).range([0, F.iw]);
+  const ys = rows.flatMap(r => [r[tsPol + "_landslide"], r[tsPol + "_stable"]]);
+  const y = d3.scaleLinear().domain([Math.floor(d3.min(ys) - .5), Math.ceil(d3.max(ys) + .5)]).range([F.ih, 0]);
+  F.g.append("rect").attr("x", x(new Date("2026-09-26"))).attr("width", x(new Date("2026-09-30")) - x(new Date("2026-09-26"))).attr("y", 0).attr("height", F.ih).attr("fill", css("--accent-wash"));
+  F.g.append("text").attr("x", x(new Date("2026-09-28"))).attr("y", 10).attr("text-anchor", "middle").attr("class", "lbl").text("rain");
+  F.g.append("g").attr("class", "gridl").call(d3.axisLeft(y).ticks(5).tickSize(-F.iw).tickFormat(d => d + ""));
+  F.g.append("g").attr("class", "axis").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b")));
+  F.g.append("text").attr("x", -34).attr("y", -4).text("dB");
+  for (const [k, c] of [["stable", "--muted"], ["landslide", "--slide-md"]]) {
+    const key = tsPol + "_" + k;
+    F.g.append("path").datum(rows).attr("fill", "none").attr("stroke", css(c)).attr("stroke-width", 2).attr("stroke-linejoin", "round").attr("d", d3.line().x(d => x(d.d)).y(d => y(d[key])));
+    F.g.selectAll(null).data(rows).join("circle").attr("cx", d => x(d.d)).attr("cy", d => y(d[key])).attr("r", 4).attr("fill", css(c)).attr("stroke", css("--panel")).attr("stroke-width", 2);
+    const last = rows[rows.length - 1];
+    F.g.append("text").attr("class", "lbl-strong").attr("x", x(last.d) + 8).attr("y", y(last[key])).attr("dy", ".35em").text(fmt(last[key], 1));
+  }
+  const hover = F.g.append("line").attr("y1", 0).attr("y2", F.ih).attr("stroke", css("--line-2")).attr("opacity", 0);
+  F.g.append("rect").attr("width", F.iw).attr("height", F.ih).attr("fill", "transparent").on("mousemove", ev => {
+    const [mx] = d3.pointer(ev); const dd = x.invert(mx); const r = rows.reduce((a, b) => Math.abs(b.d - dd) < Math.abs(a.d - dd) ? b : a);
+    hover.attr("x1", x(r.d)).attr("x2", x(r.d)).attr("opacity", 1);
+    showTip(ev, `<b>${d3.timeFormat("%d %b %Y")(r.d)}</b> · ${esc(r.platform)}<br>Landslides <span class="num">${fmt(r[tsPol + "_landslide"], 2)} dB</span><br>Stable <span class="num">${fmt(r[tsPol + "_stable"], 2)} dB</span>`);
+  }).on("mouseleave", () => { hover.attr("opacity", 0); hideTip(); });
+}
+$("#ts-pol").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; tsPol = b.dataset.p; $("#ts-pol").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawTS(); });
+
+/* rainfall */
+function drawRain() {
+  const R = A.rain;
+  const ev = R.daily.filter(d => d.date >= "2026-09-25" && d.date <= "2026-09-29").reduce((a, d) => a + d.mean_mm, 0);
+  $("#rain-lede").textContent = `Township mean of ${R.points} Open-Meteo grid points. ${fmt(ev)} mm fell on 25–29 September. At Ka Det Nge Htein the 3-day peak of ${fmt(R.event_max3_mm)} mm ranks ${R.rank3} of ${R.years + 1} years since 1991 (previous record ${fmt(R.record3_before.mm)} mm in ${R.record3_before.year}). Model rainfall, not a gauge.`;
+  const rows = R.daily.map(d => ({ ...d, d: new Date(d.date) }));
+  const F = frame("#c-rain", 200, { t: 12, r: 10, b: 24, l: 40 });
+  const x = d3.scaleBand().domain(rows.map(d => d.date)).range([0, F.iw]).paddingInner(.15);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, d => d.mean_mm) * 1.08]).nice().range([F.ih, 0]);
+  F.g.append("g").attr("class", "gridl").call(d3.axisLeft(y).ticks(4).tickSize(-F.iw));
+  const months = rows.filter(d => d.date.endsWith("-01"));
+  F.g.append("g").attr("class", "axis").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x).tickValues(months.map(d => d.date)).tickFormat(d => d3.timeFormat("%b")(new Date(d))));
+  F.g.append("text").attr("x", -34).attr("y", -2).text("mm");
+  const s1 = new Set([...D.s1.ASC070.pre, ...D.s1.ASC070.post]);
+  F.g.selectAll(null).data(rows).join("path").attr("d", d => roundTop(x(d.date), y(d.mean_mm), x.bandwidth(), F.ih - y(d.mean_mm), 1.5))
+    .attr("fill", d => d.date >= "2026-09-25" && d.date <= "2026-09-29" ? css("--slide-md") : css("--rain"))
+    .on("mousemove", (ev, d) => showTip(ev, `<b>${d3.timeFormat("%d %b")(d.d)}</b><br>Township mean <span class="num">${fmt(d.mean_mm, 1)} mm</span><br>Wettest point <span class="num">${fmt(d.max_mm, 1)} mm</span>${s1.has(d.date) ? "<br>Sentinel-1 pass" : ""}`)).on("mouseleave", hideTip);
+  F.g.selectAll(null).data(rows.filter(d => s1.has(d.date))).join("path").attr("d", d => { const cx = x(d.date) + x.bandwidth() / 2; return `M${cx},${F.ih + 1}l-3.5,6h7z`; }).attr("fill", css("--ink-2"));
+  F.svg.append("text").attr("x", F.w - 10).attr("y", 12).attr("text-anchor", "end").attr("class", "lbl").text("▲ Sentinel-1 pass");
+  // annual maximum 3-day rainfall
+  const Y = R.annual_max;
+  const G = frame("#c-rainyr", 170, { t: 22, r: 10, b: 24, l: 40 });
+  const xx = d3.scaleBand().domain(Y.map(d => d.year)).range([0, G.iw]).paddingInner(.2);
+  const yy = d3.scaleLinear().domain([0, d3.max(Y, d => d.max3) * 1.1]).nice().range([G.ih, 0]);
+  G.g.append("g").attr("class", "gridl").call(d3.axisLeft(yy).ticks(4).tickSize(-G.iw));
+  G.g.append("g").attr("class", "axis").attr("transform", `translate(0,${G.ih})`).call(d3.axisBottom(xx).tickValues(Y.map(d => d.year).filter(y => y % 5 === 0 || y === 2026)));
+  G.g.append("text").attr("class", "lbl-strong").attr("x", 0).attr("y", -10).text("Wettest 3 days of each year, Ka Det Nge Htein (mm)");
+  G.g.selectAll(null).data(Y).join("path").attr("d", d => roundTop(xx(d.year), yy(d.max3), xx.bandwidth(), G.ih - yy(d.max3), 1.5))
+    .attr("fill", d => d.year === 2026 ? css("--slide-md") : css("--rain")).attr("opacity", d => d.year === 2026 ? 1 : .75)
+    .on("mousemove", (ev, d) => showTip(ev, `<b>${d.year}</b><br>Max 1-day <span class="num">${fmt(d.max1)} mm</span><br>Max 3-day <span class="num">${fmt(d.max3)} mm</span><br>Max 5-day <span class="num">${fmt(d.max5)} mm</span>`)).on("mouseleave", hideTip);
+}
+
+/* village tracts + villages */
+function drawTables() {
+  const t = $("#t-vt"); t.innerHTML = "";
+  const mx = d3.max(A.village_tracts, d => d.landslide_ha) || 1;
+  t.append(el("thead", {}, el("tr", {}, ["Village tract", "", "Landslides", "High", "Area (ha)", "% of land"].map((h, i) => el("th", { class: i > 1 ? "n" : "", text: h })))));
+  const tb = el("tbody");
+  for (const r of A.village_tracts) {
+    const tr = el("tr", {}, [el("td", { text: r.VT }), el("td", { class: "mm", text: r.VT_MMR || "" }), el("td", { class: "n", text: fmt(r.landslides) }), el("td", { class: "n", text: fmt(r.high_conf) }),
+      el("td", { class: "n bar-cell" }, [el("b", { style: `width:${(r.landslide_ha / mx * 100).toFixed(1)}%` }), el("span", { text: fmt(r.landslide_ha, 1) })]), el("td", { class: "n", text: fmt(r.density_pct, 2) })]);
+    tr.addEventListener("click", () => { showVT(r.VT_PCODE); document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" }); });
+    tb.append(tr);
+  }
+  t.append(tb);
+  const ex = A.exposure;
+  $("#exp-lede").textContent = `MIMU villages ranked by mapped landslide ground within 1 km. ${ex.villages_within_500m} of ${ex.villages_total} villages have a mapped landslide within 500 m; ${ex.facilities.schools.within_500m} schools and ${ex.facilities.health.within_500m} health facilities lie within 500 m. Building counts are OSM, which is incomplete in rural Launglon.`;
+  const v = $("#t-vill"); v.innerHTML = "";
+  v.append(el("thead", {}, el("tr", {}, ["Village", "", "Village tract", "Nearest (m)", "Within 1 km (ha)", "Buildings 1 km"].map((h, i) => el("th", { class: i > 2 ? "n" : "", text: h })))));
+  const vb = el("tbody");
+  for (const r of A.villages) {
+    const tr = el("tr", {}, [el("td", { text: r.village }), el("td", { class: "mm", text: r.village_mmr || "" }), el("td", { text: r.vt }), el("td", { class: "n", text: fmt(r.dist_m) }), el("td", { class: "n", text: fmt(r.ls_ha_1km, 2) }), el("td", { class: "n", text: fmt(r.buildings_1km) })]);
+    tr.addEventListener("click", () => { showVillage(r.pcode); document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" }); });
+    vb.append(tr);
+  }
+  v.append(vb);
+}
+
+/* frequency ratio small multiples */
+function drawFR() {
+  const box = $("#fr"); box.innerHTML = "";
+  const names = { slope: "Slope (°)", elevation: "Elevation (m)", aspect: "Aspect (slopes ≥ 5°)", landcover: "Land cover (WorldCover 2021)", dist_stream: "Distance to stream" };
+  const all = Object.values(A.factors).flat().map(d => d.fr);
+  const xmax = Math.max(2, Math.ceil(d3.max(all)));
+  for (const k of Object.keys(A.factors)) box.append(el("div", {}, [el("h4", { text: names[k] || k }), el("div", { class: "chart", id: "fr-" + k })]));
+  for (const [k, rows] of Object.entries(A.factors)) {
+    const id = "fr-" + k;
+    const F = frame("#" + id, 22 * rows.length + 26, { t: 4, r: 34, b: 20, l: 112 });
+    const y = d3.scaleBand().domain(rows.map(d => d.class)).range([0, F.ih]).paddingInner(.3);
+    const x = d3.scaleLinear().domain([0, xmax]).range([0, F.iw]);
+    F.g.append("g").attr("class", "gridl").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x).ticks(Math.min(xmax, 4)).tickSize(-F.ih));
+    F.g.append("line").attr("x1", x(1)).attr("x2", x(1)).attr("y1", -2).attr("y2", F.ih).attr("stroke", css("--ink-2")).attr("stroke-width", 1);
+    F.g.selectAll(null).data(rows).join("text").attr("class", "lbl").attr("x", -8).attr("y", d => y(d.class) + y.bandwidth() / 2).attr("dy", ".35em").attr("text-anchor", "end").text(d => d.class);
+    F.g.selectAll(null).data(rows).join("path").attr("d", d => roundRight(0, y(d.class) + (y.bandwidth() - Math.min(y.bandwidth(), 12)) / 2, Math.max(x(Math.min(d.fr, xmax)), 1), Math.min(y.bandwidth(), 12), 3))
+      .attr("fill", d => d.fr >= 1 ? css("--slide-md") : css("--line-2"))
+      .on("mousemove", (ev, d) => showTip(ev, `<b>${esc(d.class)}</b><br>Frequency ratio <span class="num">${fmt(d.fr, 2)}</span><br>Landslide ground <span class="num">${fmt(d.landslide_ha, 1)} ha</span><br>Class area <span class="num">${fmt(d.area_km2, 1)} km²</span>`)).on("mouseleave", hideTip);
+    F.g.selectAll(null).data(rows).join("text").attr("x", d => x(Math.min(d.fr, xmax)) + 4).attr("y", d => y(d.class) + y.bandwidth() / 2).attr("dy", ".35em").text(d => fmt(d.fr, 1));
+  }
+}
+
+/* sizes */
+function drawSize() {
+  const rows = A.size_bins.map((b, i) => ({ b, n: A.size_hist[i] })).filter((d, i) => i > 0 || d.n > 0);
+  const F = frame("#c-size", 210, { t: 16, r: 10, b: 36, l: 40 });
+  const x = d3.scaleBand().domain(rows.map(d => d.b)).range([0, F.iw]).paddingInner(.3);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, d => d.n) * 1.12]).nice().range([F.ih, 0]);
+  F.g.append("g").attr("class", "gridl").call(d3.axisLeft(y).ticks(4).tickSize(-F.iw));
+  F.g.append("g").attr("class", "axis").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x));
+  F.g.append("text").attr("x", F.iw / 2).attr("y", F.ih + 32).attr("text-anchor", "middle").text("area (ha)");
+  const bw = Math.min(x.bandwidth(), 24);
+  F.g.selectAll(null).data(rows).join("path").attr("d", d => roundTop(x(d.b) + (x.bandwidth() - bw) / 2, y(d.n), bw, F.ih - y(d.n), 4)).attr("fill", css("--slide-md"))
+    .on("mousemove", (ev, d) => showTip(ev, `<b>${d.b} ha</b><br><span class="num">${fmt(d.n)}</span> landslides`)).on("mouseleave", hideTip);
+  F.g.selectAll(null).data(rows).join("text").attr("x", d => x(d.b) + x.bandwidth() / 2).attr("y", d => y(d.n) - 5).attr("text-anchor", "middle").text(d => fmt(d.n));
+}
+
+/* optical cross-check */
+function drawOpt() {
+  const O = A.optical;
+  const oc = A.optical_class;
+  $("#opt-lede").textContent = O.det_px_clear ? `Sentinel-2 saw ${pct(O.det_px_clear / O.det_px_total)} of the mapped landslide ground through clouds on 30 Sep or 5 Oct. There, ${pct(O.det_share_drop015)} of pixels lost at least 0.15 NDVI against the January–March median, against ${pct(O.bg_share_drop015)} of undetected slopes. Optical data was not used to train the map. ${fmt(oc.supported || 0)} landslides are optically supported, ${fmt(oc["not seen"] || 0)} were seen clear without a drop, ${fmt(oc.cloud || 0)} were under cloud.` : "No clear Sentinel-2 view of the mapped landslides yet.";
+  legend("#opt-legend", [["Mapped landslide pixels", "--slide-md"], ["Undetected slopes ≥ 12°", "--muted"]]);
+  const bins = O.hist_bins, mid = bins.slice(0, -1).map((b, i) => (b + bins[i + 1]) / 2);
+  const sd = d3.sum(O.hist_det) || 1, sb = d3.sum(O.hist_bg) || 1;
+  const rows = mid.map((m, i) => ({ m, det: O.hist_det[i] / sd, bg: O.hist_bg[i] / sb }));
+  const F = frame("#c-opt", 210, { t: 10, r: 12, b: 34, l: 40 });
+  const x = d3.scaleLinear().domain([bins[0], bins[bins.length - 1]]).range([0, F.iw]);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, d => Math.max(d.det, d.bg)) * 1.1]).nice().range([F.ih, 0]);
+  F.g.append("g").attr("class", "gridl").call(d3.axisLeft(y).ticks(4).tickSize(-F.iw).tickFormat(d3.format(".0%")));
+  F.g.append("g").attr("class", "axis").attr("transform", `translate(0,${F.ih})`).call(d3.axisBottom(x).ticks(6));
+  F.g.append("text").attr("x", F.iw / 2).attr("y", F.ih + 30).attr("text-anchor", "middle").text("NDVI change, post-event minus Jan–Mar 2026");
+  F.g.append("line").attr("x1", x(-0.15)).attr("x2", x(-0.15)).attr("y1", 0).attr("y2", F.ih).attr("stroke", css("--ink-2")).attr("stroke-dasharray", null).attr("opacity", .6);
+  for (const [k, c] of [["bg", "--muted"], ["det", "--slide-md"]]) {
+    F.g.append("path").datum(rows).attr("fill", css(c)).attr("opacity", .1).attr("d", d3.area().x(d => x(d.m)).y0(F.ih).y1(d => y(d[k])).curve(d3.curveMonotoneX));
+    F.g.append("path").datum(rows).attr("fill", "none").attr("stroke", css(c)).attr("stroke-width", 2).attr("d", d3.line().x(d => x(d.m)).y(d => y(d[k])).curve(d3.curveMonotoneX));
+  }
+  F.g.append("rect").attr("width", F.iw).attr("height", F.ih).attr("fill", "transparent").on("mousemove", ev => { const [mx] = d3.pointer(ev); const v = x.invert(mx); const r = rows.reduce((a, b) => Math.abs(b.m - v) < Math.abs(a.m - v) ? b : a); showTip(ev, `NDVI change <b>${fmt(r.m, 2)}</b><br>Mapped landslides <span class="num">${pct(r.det, 1)}</span><br>Undetected slopes <span class="num">${pct(r.bg, 1)}</span>`); }).on("mouseleave", hideTip);
+}
+
+/* workflow steps */
+(function steps() {
+  const s = D.s1.ASC070;
+  const items = [
+    ["Inventory by track", `CDSE Sentinel Hub catalogue, grouped by orbit track and pass. Ascending track 70 has ${s.pre.length} pre-event passes (${s.pre[0]} to ${s.pre[s.pre.length - 1]}, ${s.platforms.join(" and ")}) and ${s.post.length} post-event pass. Descending track 135 has no post-event pass yet; the workflow adds it when one arrives.`],
+    ["Gamma0 RTC at 10 m", "VV and VH terrain-flattened gamma0 (Copernicus DEM GLO-30), orthorectified to a fixed 10 m UTM 47N grid, with no speckle filter and no multilooking. Local incidence angle and layover/shadow flags come with it."],
+    ["Temporal, not spatial, speckle control", "The pre-event reference is the mean of all pre-event passes (about 10× the looks of one scene). Each pixel's own pre-event variability standardises the change, so noisy plantations and stable forest are judged on their own terms."],
+    ["Context at full resolution", "Change features are joined by terrain (slope, topographic position, curvature, local incidence), WorldCover land cover, distance to streams and the January–March Sentinel-2 NDVI, all on the same 10 m grid."],
+    ["Train and test on drone surveys", `A gradient-boosted classifier learns from ${Object.values(V.sites).reduce((a, x) => a + x.n_landslides, 0)} drone-mapped landslides and, as negatives, from two no-event pairs across the whole township, including the surveyed slopes before they failed. It is tested leave-one-site-out and compared with a classic two-scene log-ratio and an unsupervised multi-temporal detector.`],
+    ["Objects, masks and placebo control", `Probabilities ≥ ${V.threshold} become 8-connected objects of at least ${V.mmu_px * 100 / 10000} ha that reach a 12° source slope, outside water and radar shadow. The threshold is the best held-out F1 whose false-alarm area on a no-event pair stays under 20 % of the event map; a second no-event pair checks it independently.`],
+    ["Attribute and expose", "Each landslide gets confidence, terrain, land cover, a Sentinel-2 check and its MIMU village tract. Villages, schools, health facilities, OSM buildings and roads are intersected."],
+  ];
+  const ol = $("#steps");
+  items.forEach(([b, p]) => ol.append(el("li", {}, el("div", {}, [el("b", { text: b }), el("p", { text: p })]))));
+  const foot = $("#foot");
+  foot.append("Built by the Launglon Sentinel-1 workflow (workflow/01–09; source: ",
+    el("a", { href: "https://github.com/geonet-myanmar/launglon-landslide-map-2026", target: "_blank", rel: "noopener", text: "geonet-myanmar/launglon-landslide-map-2026" }),
+    "). Contains modified Copernicus Sentinel data 2026. Boundaries and place names: MIMU. Not an official damage assessment.");
+})();
+
+function drawAll() { drawValidation(); drawTS(); drawRain(); drawTables(); drawFR(); drawSize(); drawOpt(); }
+drawAll();
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawAll, 150); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { drawAll(); restyleLS(); });
+new MutationObserver(() => { drawAll(); restyleLS(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+</script>
